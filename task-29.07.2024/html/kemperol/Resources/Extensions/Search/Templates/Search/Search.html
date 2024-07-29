@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:f="http://xsd.helmut-hummel.de/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+{namespace is=TYPO3\CMS\IndexedSearch\ViewHelpers}
+<f:spaceless>
+
+	<f:alias map="{sword: searchParams.sword}">
+		<div class="hidden">
+			<f:render partial="Form" arguments="{_all}" />
+		</div>
+	</f:alias>
+	
+	<f:for each="{resultsets}" as="result">
+		<section class="clearfix section-row element element-gap-tiny">
+		  <div class="page-top-banner narrow-banner clearfix">
+		    <div class="page-banner-slider-box">
+
+		      <div class="banner-main-wrap set-back clearfix">
+                <img src="/fileadmin/templates/kemperol/Images/home-banner-dicht.jpg" alt="" />
+                <div class="slider-elements clearfix">
+                      <div class="slider-content clearfix entry">
+                          <div class="container">
+                            <h2><f:for each="{searchWords}" as="searchWord" key="key"><f:if condition="{key} > 0"><f:then><f:translate key="searchFor.{searchWord.oper}" />&nbsp;{searchWord.sword}</f:then><f:else><f:translate key="searchFor" />&nbsp;"{searchWord.sword}</f:else></f:if></f:for><f:if condition="{searchWords -> f:count()} > 0"><f:then>"</f:then></f:if></h2>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+		    </div>
+		  </div>
+		</section>
+
+		<f:cObject typoscriptObjectPath="lib.navigation.breadcrumb" />
+
+		<section class="clearfix section-row main-content">
+      		<div class="container">
+      			<div class="element element-gap-normal clearfix">
+
+					<f:if condition="{result.count} > 0">
+						<f:then>
+							<f:for each="{result.rows}" as="row">
+								<f:render partial="Searchresult" arguments="{row: row}" />
+							</f:for>
+							<div class="tx-indexedsearch-browsebox">
+								<is:pageBrowsing numberOfResults="{result.count}" maximumNumberOfResultPages="{settings.page_links}" currentPage="{searchParams.pointer}" resultsPerPage="{searchParams.numberOfResults}" />
+							</div>
+						</f:then>
+						<f:else>
+							<f:translate key="result.noResult" />
+						</f:else>
+					</f:if>
+
+				</div>
+				<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '1'}" />
+			</div>
+		</section>
+	</f:for>
+</f:spaceless>
+</html>

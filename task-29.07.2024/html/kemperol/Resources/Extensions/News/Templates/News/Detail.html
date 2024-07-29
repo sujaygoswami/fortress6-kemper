@@ -1,0 +1,178 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  xmlns:rx="http://typo3.org/ns/Reelworx/RxShariff/ViewHelper"
+	  data-namespace-typo3-fluid="true">
+
+<f:layout name="Detail" />
+
+<!--
+	=====================
+		News/Detail.html
+-->
+
+<f:section name="content">
+	<f:if condition="{newsItem}">
+		<f:then>
+			<n:format.nothing>
+				<n:excludeDisplayedNews newsItem="{newsItem}" />
+				<f:if condition="{settings.detail.showMetaTags}">
+					<f:render partial="Detail/Opengraph" arguments="{newsItem: newsItem, settings:settings}" />
+				</f:if>
+                <f:if condition="{newsItem.alternativeTitle}">
+                    <f:then>
+                        <n:titleTag>
+                            <f:format.htmlentitiesDecode>{newsItem.alternativeTitle}</f:format.htmlentitiesDecode>
+                        </n:titleTag>
+                    </f:then>
+                    <f:else>
+                        <n:titleTag>
+                            <f:format.htmlentitiesDecode>{newsItem.title}</f:format.htmlentitiesDecode>
+                        </n:titleTag>
+                    </f:else>
+                </f:if>
+			</n:format.nothing>
+
+
+			<section class="clearfix section-row element element-gap-tiny">
+		      <div class="page-top-banner narrow-banner clearfix">
+		        <div class="page-banner-slider-box">
+
+		          <f:if condition="{newsItem.media}">
+		            <f:for each="{newsItem.media}" as="mediaElement" iteration="iterator">
+		              <f:if condition="{mediaElement.originalResource.type} == 2">
+		                <f:if condition="{iterator.isFirst}">
+		                  <div class="banner-main-wrap set-back clearfix">
+		                    <f:image image="{mediaElement}" title="{mediaElement.title}" alt="{mediaElement.alternative}" width="1920c" height="570c" />
+		                    <div class="slider-elements clearfix">
+                              <div class="slider-content clearfix entry">
+                                  <div class="container">
+                                    <f:if condition="{newsItem.netzsubheader}"><h5>{newsItem.netzsubheader}</h5></f:if>
+                                    <h2>{newsItem.title}</h2>
+                                  </div>
+                              </div>
+                          	</div>
+                      		</div>
+		                </f:if>
+		              </f:if>
+		            </f:for>
+		          </f:if>
+
+		        </div>
+		      </div>
+		    </section>
+
+		    <f:cObject typoscriptObjectPath="lib.navigation.breadcrumb" />
+
+		    <section class="clearfix section-row main-content">
+      			<div class="container">
+
+      				<div class="element element-gap-normal clearfix">
+			          <div class="content-grid-with-sidebar">
+			            <div class="row">
+			              <div class="my-col main-column col">
+
+			                <div class="entry normal-content-module clearfix element element-gap-large">
+			                  <f:format.html>{newsItem.bodytext}</f:format.html>
+			                </div>
+
+			                <f:if condition="{newsItem.media}">
+			                  <div class="inner-carousel-module default-content-slider owl-carousel full-height clearfix equal-row image-with-content-box-carousel no-bullet">
+			                    <f:for each="{newsItem.media}" as="mediaElement" iteration="iterator">
+			                      <f:if condition="{mediaElement.originalResource.type} == 2">
+			                        <f:if condition="{iterator.isFirst}">
+			                          <f:then></f:then>
+			                          <f:else>
+			                            <div class="item equal-block">
+			                              <div class="image-holder full-height set-back">
+			                                <f:image image="{mediaElement}" title="{mediaElement.title}" alt="{mediaElement.alternative}" width="820c" height="492c" />
+			                              </div>
+                                        </div>
+                                      </f:else>
+			                        </f:if>
+			                      </f:if>
+			                    </f:for>
+			                  </div>
+			                </f:if>
+
+
+
+			              </div>
+			              <div class="my-col sidebar-column col">
+
+			                <div class="sidebar-main-wrap entry clearfix extreme-light-bg-section">
+			                  <p><strong>
+                                <f:if condition="{newsItem.netzeend}">
+                                  <f:then>
+                                    <f:cObject typoscriptObjectPath="lib.news.dateFromTitle" /> <f:format.date format="d.m.">{newsItem.datetime}</f:format.date> - <f:format.date format="d.m.Y">{newsItem.netzeend}</f:format.date>
+                                  </f:then>
+                                  <f:else>
+			                      <f:cObject typoscriptObjectPath="lib.news.dateTitle" /> <f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date>
+			                      </f:else>
+			                    </f:if>
+                                </strong></p>
+                                <f:format.html>{newsItem.teaser}</f:format.html>
+			                </div>
+
+			                <f:if condition="{newsItem.contentElements}">
+			                  <f:cObject typoscriptObjectPath="lib.tx_news.contentElementRendering">{newsItem.contentElementIdList}</f:cObject>
+			                </f:if>
+
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+
+			        <f:if condition="{newsItem.allRelatedSorted}">
+			          <div class="element element-gap-normal clearfix">
+			            <div class="clearfix entry block-header-module large-pad">
+			              <h3><f:translate key="related-news" /></h3>
+			            </div>
+			          </div>
+
+			          <div class="element element-gap-normal clearfix">
+			            <div class="news-block-module clearfix">
+			              <div class="row">
+			                <f:for each="{newsItem.allRelatedSorted}" as="related">
+
+			                  <div class="col-md-4 col-sm-4 my-col three-col default-column-gap">
+			                    <div class="main-wrap clearfix">
+			                      <n:link newsItem="{related}" settings="{settings}" title="{related.title}">
+			                        <f:if condition="{related.falMedia}">
+		                                <f:then>
+		                                  <div class="news-featured-img">
+		                                    <f:alias map="{mediaElement: related.falMedia.0}">
+		                                      <f:if condition="{mediaElement.originalResource.type} == 2">
+		                                        <f:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.title}" alt="{mediaElement.alternative}" width="778c" height="394c"/>
+		                                      </f:if>
+		                                    </f:alias>
+		                                  </div>
+		                                </f:then>
+		                              </f:if>
+		                              <div class="news-content clearfix">
+		                                    <div class="news-excerpt entry">
+		                                        <h6>{related.title}</h6>
+		                                        {related.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+		                                    </div>
+		                                    <div class="news-post-date">
+		                                      <f:format.date format="d.m.Y">{related.datetime}</f:format.date>
+		                                    </div>
+	                                	</div>
+			                      </n:link>
+			                    </div>
+			                  </div>
+
+			                </f:for>
+			              </div>
+			            </div>
+			          </div>
+			        </f:if>
+
+			    </div>
+			</section>
+		</f:then>
+		<f:else>
+
+		</f:else>
+	</f:if>
+</f:section>
+</html>

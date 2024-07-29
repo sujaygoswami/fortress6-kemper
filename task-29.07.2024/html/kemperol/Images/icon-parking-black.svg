@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <style>.cls-1{fill:none;stroke:#005092;stroke-linecap:round;stroke-linejoin:round;stroke-width:6px;}</style>
+  </defs>
+  <title>181105_KEMPEROL_Anwendungsgebiete</title>
+  <g id="Park">
+    <line class="cls-1" x1="37.84" y1="156.53" x2="154.16" y2="156.53"></line>
+    <polygon class="cls-1" points="168.13 84.82 96 48.76 23.86 84.82 23.86 75.78 96 39.72 168.13 75.78 168.13 84.82"></polygon>
+    <rect class="cls-1" x="81.49" y="121.51" width="29.08" height="7.46"></rect>
+    <polygon class="cls-1" points="68.49 112.56 59.69 112.56 59.69 120.02 73.71 120.02 68.49 112.56"></polygon>
+    <polygon class="cls-1" points="133.21 112.56 124.42 112.56 119.19 120.02 133.21 120.02 133.21 112.56"></polygon>
+    <polygon class="cls-1" points="139.82 108.83 128.14 79.01 64.02 79.01 52.13 108.83 52.13 136.42 139.82 136.42 139.82 108.83"></polygon>
+    <rect class="cls-1" x="52.18" y="136.42" width="10.96" height="11.93"></rect>
+    <rect class="cls-1" x="128.91" y="136.42" width="10.96" height="11.93"></rect>
+    <polygon class="cls-1" points="129.03 102.12 63.83 102.12 70.53 86.63 122.32 86.63 129.03 102.12"></polygon>
+  </g>
+</svg>

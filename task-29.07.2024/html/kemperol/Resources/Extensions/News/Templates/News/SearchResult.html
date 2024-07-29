@@ -1,0 +1,64 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/SearchResult.html
+-->
+
+<f:section name="content">
+		<div class="element element-gap-normal clearfix">
+	    <div class="filter-form-module clearfix">
+	      <div class="site-form-module type-three clearfix">
+	        
+	        <div class="site-form-row clearfix">
+	          <div class="site-form-block col-5 col-tab-3 col">
+	            	<label class="site-form-label"><f:translate key="categories" /></label>
+		            <f:if condition="{settings.categoryConjunction}">
+		              <f:then>
+		                <f:cObject typoscriptObjectPath="lib.news.categories" data="{settings.categories}" />
+		                <div class="hidden forlang-only">
+		                  <f:cObject typoscriptObjectPath="lib.news.langcategories" data="{settings.categories}" />
+		                  <f:cObject typoscriptObjectPath="lib.news.langcatFromPid" data="{settings.startingpoint}" />
+		                </div>
+		              </f:then>
+		              <f:else>
+		                <f:cObject typoscriptObjectPath="lib.news.catFromPid" data="{settings.startingpoint}" />
+		              </f:else>
+		            </f:if>
+
+	            </div>
+	            <f:cObject typoscriptObjectPath="lib.news.searchForm" />
+	        </div>
+	        
+	      </div>
+	    </div>
+	  </div>
+		<f:if condition="{news}">
+			<f:then>
+				<f:if condition="{search}">
+				<div class="element element-gap-normal clearfix">
+      				<div class="count-msg">
+					<f:translate key="search-text" arguments="{0:'{f:count(subject:news)}',1:search.subject}" />
+					</div>
+				</div>
+				</f:if>
+				<div class="element element-gap-normal clearfix">
+		          	<div class="news-block-module clearfix">
+		            <div class="row">
+						<f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+							<f:render partial="List/Item" arguments="{newsItem: newsItem, settings:settings, className:className, view:'list'}" />
+						</f:for>
+					</div>
+					</div>
+				</div>
+			</f:then>
+			<f:else>
+				<div class="element element-gap-normal clearfix">
+    				<div class="no-news-found">
+					<f:translate key="search-noresult" />
+					</div>
+				</div>
+			</f:else>
+		</f:if>
+</f:section>
+</html>

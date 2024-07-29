@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <style>.cls-1{fill:none;stroke:#c5d7e2;stroke-linecap:round;stroke-linejoin:round;stroke-width:6px;}</style>
+  </defs>
+  <title>181105_KEMPEROL_Anwendungsgebiete</title>
+  <g id="Licht">
+    <line class="cls-1" x1="32.32" y1="131.66" x2="27.6" y2="122.14"></line>
+    <polyline class="cls-1" points="147.98 78.66 152.7 88.19 56.18 123.1"></polyline>
+    <path class="cls-1" d="M27.57,122.13c12.81-14.55,32-27.51,55.1-35.86s46.15-10.62,65.3-7.59"></path>
+    <line class="cls-1" x1="16" y1="156.32" x2="176" y2="156.32"></line>
+    <rect class="cls-1" x="32" y="133.32" width="128" height="23"></rect>
+  </g>
+</svg>

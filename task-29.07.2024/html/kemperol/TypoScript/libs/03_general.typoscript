@@ -1,0 +1,103 @@
+lib.productContent = RECORDS
+lib.productContent {
+  source = 7
+  tables = tt_content
+  wrap = <div class="col-2 col my-col two-col equal-block place-right felogin-form">|</div>
+}
+  
+[frontend.user.isLoggedIn]
+  lib.productContent >
+  lib.productContent = TEXT
+[end]
+
+lib.hamburger = COA
+lib.hamburger {
+  10 = TEXT
+  10.value = MENÜ
+  10.wrap = <b class="menu-normal-text">|</b>
+
+  wrap = <div class="header-top-left-part full-height clearfix hidden-xs"><div class="main-nav full-height"><div class="table-wrap"><div class="table-cell middle-line"><div class="main-nav-click"><span>|</span><i></i></div></div></div></div></div>
+}
+[siteLanguage("languageId") == 1]
+lib.hamburger.10.value = MENU
+[end]
+
+
+lib.footerAddress = COA
+lib.footerAddress{
+  10 = COA
+    10 {
+      wrap = <div class="footer-block-head">|</div>
+
+      1 = FILES
+        1 {
+            references { 
+                table = pages 
+                uid = {$page.links.footerAddress}
+                fieldName = media
+            }
+            begin = 0
+            maxItems = 1
+            renderObj = COA 
+            renderObj { 
+                10 = IMAGE 
+                10 {
+                    file.import.data = file:current:publicUrl
+                    stdWrap.wrap = <div class="footer-head-ico"><div class="table-wrap"><div class="table-cell middle-line">|</div></div></div>
+                }
+            }
+        }
+        2 = HMENU
+        2 {
+          special = list
+          special.value = {$page.links.footerAddress}
+          wrap = <div class="footer-head-text entry"><h4>|</h4></div>
+          includeNotInMenu = 1
+          1 = TMENU
+          1 {
+            NO {
+              doNotLinkIt = 1
+            }
+          }
+        }
+    }
+    
+  20 = CONTENT
+    20 {
+        table = tt_content
+        select.where = colPos = 0
+        select.pidInList = {$page.links.footerAddress}
+        wrap = <div class="footer-content entry clearfix">|</div>
+    }
+}
+
+lib.cartMenu = TEXT
+lib.cartFloating = TEXT
+              
+[3 in frontend.user.userGroupIds || 4 in frontend.user.userGroupIds || 5 in frontend.user.userGroupIds || 6 in frontend.user.userGroupIds]
+lib.cartMenu = USER
+lib.cartMenu{
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        pluginName = Mcart
+        extensionName = NetzKemper
+        controller = Products
+        vendorName = Kemper
+        action = mcart
+        settings =< plugin.tx_netzkemper.settings
+        persistence =< plugin.tx_netzkemper.persistence
+        view =< plugin.tx_netzkemper.view
+}
+              
+lib.cartFloating = USER
+lib.cartFloating{
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        pluginName = Fcart
+        extensionName = NetzKemper
+        controller = Products
+        vendorName = Kemper
+        action = fcart
+        settings =< plugin.tx_netzkemper.settings
+        persistence =< plugin.tx_netzkemper.persistence
+        view =< plugin.tx_netzkemper.view
+}
+[end]

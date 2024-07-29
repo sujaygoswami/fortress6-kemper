@@ -1,0 +1,177 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<!--
+	=====================
+		Partials/List/Item.html
+-->
+
+<f:if condition="{settings.templateLayout} == ''">
+  <n:excludeDisplayedNews newsItem="{newsItem}"/>
+
+  <div class="col-md-4 col-sm-4 my-col three-col default-column-gap">
+    <div class="main-wrap clearfix">
+      <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+        <f:if condition="{newsItem.falMedia}">
+          <f:then>
+            <div class="news-featured-img">
+              <f:alias map="{mediaElement: newsItem.falMedia.0}">
+                <f:if condition="{mediaElement.originalResource.type} == 2">
+                  <f:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.title}" alt="{mediaElement.alternative}" width="778c" height="394c"/>
+                </f:if>
+              </f:alias>
+            </div>
+          </f:then>
+        </f:if>
+      	<div class="news-content clearfix">
+            <div class="news-excerpt entry">
+                <h6>{newsItem.title}</h6>
+                <p>
+                <f:if condition="{newsItem.netzsubheader}"><strong>{newsItem.netzsubheader}</strong><br></f:if>
+                {newsItem.netzteasertext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.raw()}
+                </p>
+            </div>
+            <div class="news-post-date">
+              	<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'d.m.Y')}">
+      				<f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date>
+    			</time>
+    		</div>
+        </div>
+      </n:link>
+    </div>
+  </div>
+</f:if>
+
+<f:if condition="{settings.templateLayout} == 101">
+  <n:excludeDisplayedNews newsItem="{newsItem}"/>
+
+  <div class="item equal-block">
+    <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+      <div class="image-holder full-height set-back">
+        <f:if condition="{newsItem.falMedia}">
+          <f:then>
+              <f:alias map="{mediaElement: newsItem.falMedia.0}">
+                <f:if condition="{mediaElement.originalResource.type} == 2">
+                  <f:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.title}" alt="{mediaElement.alternative}" width="1242c" height="490c"/>
+                </f:if>
+              </f:alias>
+          </f:then>
+        </f:if>
+    		<div class="carousel-content-box">
+              <div class="main-wrap clearfix entry">
+                  <p class="no-bottom-margin">
+                    <time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'d.m.Y')}">
+		                <f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date>
+		              </time>
+                  </p>
+                  <h5>{newsItem.title}</h5>
+                  <f:if condition="{newsItem.netzsubheader}"><h6>{newsItem.netzsubheader}</h6></f:if>
+                  {newsItem.netzteasertext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+              </div>
+            </div>
+        </div>
+        </n:link>
+    </div>
+</f:if>
+
+<f:if condition="{settings.templateLayout} == 102">
+  <n:excludeDisplayedNews newsItem="{newsItem}"/>
+  
+  <div class="col-md-12 my-col one-col equal-row default-column-gap">
+    <div class="column-news-content-box col-2 col equal-block has-bg has-bg-primary">
+            <div class="column-news-post-date">
+              <f:if condition="{newsItem.netzeend}">
+                    <f:then>
+                        <f:format.date format="d.m.">{newsItem.datetime}</f:format.date> - <f:format.date format="d.m.Y">{newsItem.netzeend}</f:format.date>
+                    </f:then>
+                    <f:else>
+                        <f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date>
+                    </f:else>
+                </f:if>
+            </div>
+            <div class="column-news-excerpt entry">
+                <h3>{newsItem.title}</h3>
+                <f:if condition="{newsItem.netzsubheader}"><h4>{newsItem.netzsubheader}</h4></f:if>
+                {newsItem.netzteasertext -> f:format.crop(maxCharacters: '220', respectWordBoundaries:'1') -> f:format.html()}
+            </div>
+            <div class="column-news-button-wrap">
+              <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="page-button primary-color-button button-width-type-one"><f:translate key="more-link"/></n:link>
+                <f:link.action pageUid="1" action="download" controller="Ics" noCache="1" additionalParams="{tx_netzkemper_icsdownload:{news: '{newsItem.uid}'}}" class="page-button primary-color-button button-width-type-one"><f:cObject typoscriptObjectPath="lib.news.download"/></f:link.action>
+            </div>
+            <div class="clear"></div>
+            <div class="column-news-post-activity dropdown">
+                <span class="dropdown-toggle" data-toggle="dropdown"><img src="fileadmin/templates/kemperol/Images/share-post-white.svg" width="31" alt=""><i><f:cObject typoscriptObjectPath="lib.news.share"/></i></span>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<n:link newsItem='{newsItem}' settings='{settings}' uriOnly='1' configuration='{forceAbsoluteUrl:1}'/>"><i class="fa fa-facebook-square"></i><em>Facebook</em></a>
+                    <a class="dropdown-item" target="_blank" href="https://twitter.com/home?status=<n:link newsItem='{newsItem}' settings='{settings}' uriOnly='1' configuration='{forceAbsoluteUrl:1}'/>"><i class="fa fa-twitter-square"></i><em>Twitter</em></a>
+                    <a class="dropdown-item" target="_blank" href="https://plus.google.com/share?url=<n:link newsItem='{newsItem}' settings='{settings}' uriOnly='1' configuration='{forceAbsoluteUrl:1}'/>"><i class="fa fa-google-plus-square"></i><em>Google Plus</em></a>
+                </div>
+            </div>
+        </div>
+        <!-- content box -->
+        <!-- featured img box -->
+        <div class="column-news-featured-img-box col-2 col set-back equal-block">
+            <f:if condition="{newsItem.falMedia}">
+              <f:then>
+                  <f:alias map="{mediaElement: newsItem.falMedia.0}">
+                    <f:if condition="{mediaElement.originalResource.type} == 2">
+                      <f:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.title}" alt="{mediaElement.alternative}" width="621c" height="583c"/>
+                    </f:if>
+                  </f:alias>
+              </f:then>
+            </f:if>
+        </div>
+  </div>
+</f:if>
+
+<f:if condition="{settings.templateLayout} == 103">
+  <n:excludeDisplayedNews newsItem="{newsItem}"/>
+
+  <div class="col-md-12 my-col one-col equal-row default-column-gap">
+    <div class="column-news-content-box col-2 col equal-block has-bg has-bg-dark">
+            <div class="column-news-post-date">
+              <f:if condition="{newsItem.netzeend}">
+                    <f:then>
+                        <f:format.date format="d.m.">{newsItem.datetime}</f:format.date> - <f:format.date format="d.m.Y">{newsItem.netzeend}</f:format.date>
+                    </f:then>
+                    <f:else>
+                        <f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date>
+                    </f:else>
+                </f:if>
+            </div>
+            <div class="column-news-excerpt entry">
+                <h3>{newsItem.title}</h3>
+                <f:if condition="{newsItem.netzsubheader}"><h4>{newsItem.netzsubheader}</h4></f:if>
+                {newsItem.netzteasertext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}
+            </div>
+            <div class="column-news-button-wrap">
+              <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="page-button primary-color-button button-width-type-one"><f:translate key="more-link"/></n:link>
+                <f:link.action pageUid="1" action="download" controller="Ics" noCache="1" additionalParams="{tx_netzkemper_icsdownload:{news: '{newsItem.uid}'}}" class="page-button primary-color-button button-width-type-one"><f:cObject typoscriptObjectPath="lib.news.download"/></f:link.action>
+            </div>
+            <div class="clear"></div>
+            <div class="column-news-post-activity dropdown">
+                <span class="dropdown-toggle" data-toggle="dropdown"><img src="fileadmin/templates/kemperol/Images/share-post-white.svg" width="31" alt=""><i><f:cObject typoscriptObjectPath="lib.news.share"/></i></span>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<n:link newsItem='{newsItem}' settings='{settings}' uriOnly='1' configuration='{forceAbsoluteUrl:1}'/>"><i class="fa fa-facebook-square"></i><em>Facebook</em></a>
+                    <a class="dropdown-item" target="_blank" href="https://twitter.com/home?status=<n:link newsItem='{newsItem}' settings='{settings}' uriOnly='1' configuration='{forceAbsoluteUrl:1}'/>"><i class="fa fa-twitter-square"></i><em>Twitter</em></a>
+                    <a class="dropdown-item" target="_blank" href="https://plus.google.com/share?url=<n:link newsItem='{newsItem}' settings='{settings}' uriOnly='1' configuration='{forceAbsoluteUrl:1}'/>"><i class="fa fa-google-plus-square"></i><em>Google Plus</em></a>
+                </div>
+            </div>
+        </div>
+        <!-- content box -->
+        <!-- featured img box -->
+        <div class="column-news-featured-img-box col-2 col set-back equal-block">
+            <f:if condition="{newsItem.falMedia}">
+              <f:then>
+                  <f:alias map="{mediaElement: newsItem.falMedia.0}">
+                    <f:if condition="{mediaElement.originalResource.type} == 2">
+                      <f:image src="{mediaElement.uid}" treatIdAsReference="1" title="{mediaElement.title}" alt="{mediaElement.alternative}" width="620c" height="582c"/>
+                    </f:if>
+                  </f:alias>
+              </f:then>
+            </f:if>
+        </div>
+  </div>
+</f:if>
+
+</html>

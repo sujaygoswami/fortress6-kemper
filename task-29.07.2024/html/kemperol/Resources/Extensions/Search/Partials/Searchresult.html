@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xsd.helmut-hummel.de/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+<div class="element element-gap-normal clearfix entry element-search">
+  <h3>
+    {row.title -> f:format.raw()}
+  </h3>
+  <f:if condition="{row.headerOnly} == 0">
+    <div class="tx-indexedsearch-text-item-path"><f:format.html>{row.path}</f:format.html></div>
+    <p class="tx-indexedsearch-description">{row.description -> f:format.raw()}</p>
+  </f:if>
+  <f:if condition="{row.headerOnly} == 1">
+    <p class="tx-indexedsearch-description">{row.description -> f:format.raw()}</p>
+  </f:if>
+  <f:if condition="{row.subresults}">
+    <div class="tx-indexedsearch-list">
+      <f:for each="{row.subresults.items}" as="subrow">
+        <f:render partial="Searchresult" arguments="{row: subrow}" />
+      </f:for>
+    </div>
+  </f:if>
+</div>
+</html>

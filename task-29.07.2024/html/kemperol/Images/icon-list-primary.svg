@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="Group_1912" data-name="Group 1912" viewBox="0 0 19.01 19.565">
+  <defs>
+    <style>.cls-1,.cls-3{fill:none}.cls-1{stroke:#005192;stroke-width:1.5px}.cls-2{stroke:none}</style>
+  </defs>
+  <g id="Rectangle_342" data-name="Rectangle 342" class="cls-1">
+    <path class="cls-2" d="M0 0h8.45v8.696H0z"></path>
+    <path class="cls-3" d="M.75.75H7.7v7.196H.75z"></path>
+  </g>
+  <g id="Rectangle_345" data-name="Rectangle 345" class="cls-1">
+    <path class="cls-2" d="M0 10.87h8.45v8.696H0z"></path>
+    <path class="cls-3" d="M.75 11.62H7.7v7.196H.75z"></path>
+  </g>
+  <g id="Rectangle_343" data-name="Rectangle 343" class="cls-1">
+    <path class="cls-2" d="M10.56 0h8.45v8.696h-8.45z"></path>
+    <path class="cls-3" d="M11.31.75h6.95v7.196h-6.95z"></path>
+  </g>
+  <g id="Rectangle_344" data-name="Rectangle 344" class="cls-1">
+    <path class="cls-2" d="M10.56 10.87h8.45v8.696h-8.45z"></path>
+    <path class="cls-3" d="M11.31 11.62h6.95v7.196h-6.95z"></path>
+  </g>
+</svg>

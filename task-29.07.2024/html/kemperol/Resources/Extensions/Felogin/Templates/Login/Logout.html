@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="container-fluid element element-gap-meium">
+  <div class="background-content-module clearfix">
+    <div class="background-content-holder clearfix has-bg has-bg-primary">
+      <div class="row large-gap-column-wrap element element-gap-normal">
+        <div class="col-md-12 my-col element element-gap-normal">
+          <div class="entry clearfix">
+            <h4>
+                <f:render partial="RenderLabelOrMessage" arguments="{key: 'status_header'}"/>
+            </h4>
+          </div>
+
+          <div class="site-form-module clearfix">
+            <f:form action="login" actionUri="{actionUri}" target="_top" fieldNamePrefix="">
+                
+                <div class="site-form-row clearfix">
+                    <div class="site-form-block full-block">
+                        <label for="tx-felogin-input-logout" class="site-form-label">
+                            <f:translate key="username"/>
+                        </label>
+                        {user.username}
+                    </div>
+                </div>
+                <div class="site-form-row clearfix site-submit-row">
+                    <div class="site-form-block full-block">
+                    <div class="site-form-field">
+                        <f:form.submit value="{f:translate(key: 'logout')}" name="submit" id="tx-felogin-input-logout" class="site-form-button page-button primary-color-button button-width-type-two" />
+                    </div>
+                    </div>
+                </div>
+
+                <div class="felogin-hidden">
+                    <f:form.hidden name="logintype" value="logout"/>
+                </div>
+            </f:form>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+</div>
+</html>

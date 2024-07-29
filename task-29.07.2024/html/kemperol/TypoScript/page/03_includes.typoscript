@@ -1,0 +1,79 @@
+##################
+#### INCLUDES ####
+##################
+page = PAGE
+page {
+
+    shortcutIcon = {$page.theme.templatePath}Images/favicon.png
+
+    includeCSS {
+        vendor = {$page.theme.templatePath}Styles/vendor.css
+        style = {$page.theme.templatePath}Styles/style.css
+        additional = {$page.theme.templatePath}Styles/additional.css
+        select2 = {$page.theme.templatePath}Styles/select2.css
+        print = {$page.theme.templatePath}Styles/print.css
+        print.media = print
+    }
+
+    includeJSLibs {
+        headscripts = {$page.theme.templatePath}Javascripts/vendor/headscripts.js
+        headscripts.forceOnTop = 1
+    }
+
+    includeJSFooter {
+        vendor = {$page.theme.templatePath}Javascripts/vendor/vendor.js
+        vendor.forceOnTop = 1
+        dropzone = {$page.theme.templatePath}Javascripts/vendor/dropzone.js
+        select2 = {$page.theme.templatePath}Javascripts/vendor/select2.js
+        main = {$page.theme.templatePath}Javascripts/main.js
+    }
+
+    jsFooterInline {
+        # Google Analytics
+        10 = COA
+        10 {
+            if {
+                isTrue = {$page.tracking.google.trackingID}
+            }
+            10 = TEXT
+            10.value (
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{$page.tracking.google.trackingID}', 'auto');
+            )
+            20 = TEXT
+            20 {
+                if {
+                    isTrue = {$page.tracking.google.anonymizeIp}
+                }
+
+                value (
+
+    ga('set', 'anonymizeIp', true);
+                )
+            }
+
+            90 = TEXT
+            90.value (
+
+    ga('send', 'pageview');
+            )
+        }
+    }
+
+}
+
+page.headerData.99 = TEXT
+page.headerData.99.value (
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6WWYHYTKWD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6WWYHYTKWD');
+</script>
+)

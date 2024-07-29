@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="Dach" viewBox="0 0 192 192">
+  <defs>
+    <style>.cls-1{fill:none;stroke:#005092;stroke-linecap:round;stroke-linejoin:round;stroke-width:6px;}</style>
+  </defs>
+  <title>181105_KEMPEROL_Anwendungsgebiete</title>
+  <ellipse class="cls-1" cx="96.03" cy="48.15" rx="45.24" ry="10.91"></ellipse>
+  <path class="cls-1" d="M141.28,143.85c0,6-20.26,10.91-45.25,10.91s-45.24-4.88-45.24-10.91"></path>
+  <line class="cls-1" x1="50.79" y1="49.04" x2="50.79" y2="143.03"></line>
+  <line class="cls-1" x1="141.35" y1="49.04" x2="141.35" y2="143.03"></line>
+  <polygon class="cls-1" points="50.77 74 43.69 74.05 43.69 63.14 50.77 63.09 50.77 74"></polygon>
+  <polygon class="cls-1" points="148.46 74 141.38 74.05 141.38 63.14 148.46 63.09 148.46 74"></polygon>
+  <polyline class="cls-1" points="43.47 68.54 34 68.54 41.47 104.16 49.19 104.16"></polyline>
+  <polyline class="cls-1" points="148.53 68.54 158 68.54 150.53 104.16 142.81 104.16"></polyline>
+</svg>

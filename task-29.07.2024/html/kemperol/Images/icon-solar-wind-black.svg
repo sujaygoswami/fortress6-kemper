@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <style>.cls-1{fill:none;stroke:#005092;stroke-linecap:round;stroke-linejoin:round;stroke-width:6px;}</style>
+  </defs>
+  <title>181105_KEMPEROL_Anwendungsgebiete</title>
+  <g id="Wind">
+    <circle class="cls-1" cx="98.09" cy="86.92" r="8.42"></circle>
+    <line class="cls-1" x1="81.93" y1="155.87" x2="113.97" y2="155.87"></line>
+    <line class="cls-1" x1="94.11" y1="155.31" x2="94.11" y2="95.53"></line>
+    <line class="cls-1" x1="102.06" y1="155.31" x2="102.06" y2="95.53"></line>
+    <line class="cls-1" x1="118.81" y1="127.23" x2="144.57" y2="127.23"></line>
+    <line class="cls-1" x1="57.71" y1="71.09" x2="72.57" y2="71.09"></line>
+    <line class="cls-1" x1="52.87" y1="132.12" x2="78.41" y2="132.12"></line>
+    <path class="cls-1" d="M73.38,139.44a5.18,5.18,0,1,0,4.72-7.32"></path>
+    <path class="cls-1" d="M96.09,77.69c-2.09-3.14-3.17-11.4-3.17-21.1,0-12.4,1.76-22.46,5.17-22.46s5.16,10.06,5.16,22.46c0,9.85-1.11,18.21-3.27,21.25"></path>
+    <path class="cls-1" d="M106.7,87.43c4,.23,11.19,3.31,19,7.8,10.74,6.2,18.57,12.75,16.87,15.7s-11.3-.55-22-6.75c-7.21-4.17-13.11-8.49-15.69-11.78"></path>
+    <path class="cls-1" d="M91.22,92.44C88.59,95.71,82.74,100,75.6,104.1c-10.74,6.2-20.33,9.71-22,6.76s6.13-9.5,16.87-15.7c7.6-4.39,14.62-7.43,18.68-7.78"></path>
+    <line class="cls-1" x1="124.73" y1="79.33" x2="150.27" y2="79.33"></line>
+    <path class="cls-1" d="M145.24,86.64A5.18,5.18,0,1,0,150,79.33"></path>
+    <line class="cls-1" x1="115.51" y1="69.34" x2="131.28" y2="69.34"></line>
+    <path class="cls-1" d="M126.25,62A5.18,5.18,0,1,1,131,69.34"></path>
+  </g>
+</svg>

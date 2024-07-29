@@ -1,0 +1,59 @@
+## Layouts
+<INCLUDE_TYPOSCRIPT: source="DIR:fileadmin/templates/kemperol/TypoScript/backendLayouts/" extension="typoscript">
+
+// set flag for default langage
+mod.SHARED.defaultLanguageFlag = de
+// set label of default label in web modules
+mod.SHARED.defaultLanguageLabel = Deutsch (Standard)
+// set label of default label in records
+TCEFORM.pages_language_overlay.sys_language_uid {
+  altLabels.0 = Deutsch (Standard)
+}
+TCEFORM.tt_content.sys_language_uid {
+  altLabels.0 = Deutsch (Standard)
+}
+
+## Header Layout
+TCEFORM.tt_content.header_layout {
+  altLabels {
+    1 = Überschrift H1
+    2 = Überschrift H2
+    3 = Überschrift H3
+    4 = Überschrift H4
+    5 = Überschrift H5
+  }
+}
+
+## RTE
+RTE.default{
+    preset = customrte
+    proc.allowedClasses := addToList(block-heading)
+}
+RTE.default.buttons{
+    link.properties.class.allowedClasses := addToList()
+    blockstyle.tags.p.allowedClasses :=  addToList()
+    blockstyle.tags.h3.allowedClasses :=  addToList(block-heading)
+}
+
+RTE.classes {
+  block-heading {
+    name = Heading
+  }
+}
+
+  
+TCEFORM.tt_content.frame_class {
+   addItems {
+      cookie-german = Cookie Content Disable - German
+      cookie-english = Cookie Content Disable - English
+   }
+}
+  
+
+## News
+TCEFORM.tx_news_domain_model_news.teaser.softref = rtehtmlarea_images,typolink_tag,images,email[subst],url
+tx_news.templateLayouts {
+    101 = News List Slider
+    102 = Veranstaltungen List
+    103 = Messen List
+}

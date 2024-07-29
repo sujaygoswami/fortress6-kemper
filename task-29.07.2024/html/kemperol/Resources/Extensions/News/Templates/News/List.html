@@ -1,0 +1,99 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+	<!--TYPO3SEARCH_end-->
+	<f:if condition="{news}">
+		<f:then>
+			<f:if condition="{settings.templateLayout} == ''">
+		        <f:render section="defaultlisting" arguments="{news: news, settings:settings, pagination:pagination}" />
+		    </f:if>
+			<f:if condition="{settings.templateLayout} == 101">
+				<f:render section="style1" arguments="{news: news, settings:settings, pagination:pagination}" />
+			</f:if>
+			    
+			<f:if condition="{settings.templateLayout} == 102">
+			  	<f:render section="style2" arguments="{news: news, settings:settings, pagination:pagination}" />
+			</f:if>
+
+			<f:if condition="{settings.templateLayout} == 103">
+				<f:render section="style3" arguments="{news: news, settings:settings, pagination:pagination}" />
+			</f:if>
+		</f:then>
+		<f:else>
+			<div class="no-news-found">
+				<f:translate key="list_nonewsfound" />
+			</div>
+		</f:else>
+	</f:if>
+	<!--TYPO3SEARCH_begin-->
+</f:section>
+
+<f:section name="defaultlisting">
+	<div class="element element-gap-normal clearfix">
+	  	<div class="news-block-module clearfix">
+	  		<div class="row">
+				<f:if condition="{settings.hidePagination}">
+				  <f:then>
+				      <f:for each="{news}" as="newsItem" iteration="iterator">
+				          <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+				      </f:for>
+				  </f:then>
+				  <f:else>
+				  	  <f:if condition="{settings.list.paginate.insertAbove}">
+                            <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+                        </f:if>
+				      <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                        <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                      </f:for>
+                      <f:if condition="{settings.list.paginate.insertBelow}">
+                            <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+                        </f:if>
+				  </f:else>
+				</f:if>
+			</div>
+		</div>
+	</div>
+</f:section>
+
+<f:section name="style1">
+	<div class="element element-gap-normal clearfix">
+		<div class="inner-carousel-module default-content-slider owl-carousel full-height clearfix equal-row image-with-content-box-carousel">
+			<f:for each="{news}" as="newsItem">
+				<f:render partial="List/Item" arguments="{newsItem: newsItem, settings:settings}" />
+			</f:for>
+		</div>
+	</div>
+</f:section>
+
+<f:section name="style2">
+	<div class="element element-gap-large clearfix">
+		<div class="column-news-module clearfix">
+			<div class="row">
+				<f:for each="{news}" as="newsItem">
+					<f:render partial="List/Item" arguments="{newsItem: newsItem, settings:settings}" />
+				</f:for>
+	  		</div>
+		</div>
+	</div>
+</f:section>
+
+<f:section name="style3">
+	<div class="element element-gap-large clearfix">
+		<div class="column-news-module clearfix">
+			<div class="row">
+				<f:for each="{news}" as="newsItem">
+					<f:render partial="List/Item" arguments="{newsItem: newsItem, settings:settings}" />
+				</f:for>
+	  		</div>
+		</div>
+	</div>
+</f:section>
+
+</html>

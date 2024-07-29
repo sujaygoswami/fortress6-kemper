@@ -1,0 +1,1103 @@
+#########################
+#### Main navigation ####
+#########################
+lib.navigation.main = HMENU
+lib.navigation.main {
+
+    entryLevel = 0
+
+    1 = TMENU
+    1 {
+        noBlur = 1
+        expAll = 1
+        wrap = |
+        NO = 1
+        NO {
+            wrapItemAndSub = <li class="has-sub-item sub-item-closed">|</li>
+            doNotLinkIt = 1
+            stdWrap.cObject = COA
+            stdWrap.cObject {
+                10 = TEXT
+                10 {
+                    field = nav_title // title
+                    typolink.parameter.field = uid
+                }
+
+                20 = CONTENT
+                20 {
+                    table = tt_content
+                    select {
+                        pidInList.field = uid
+                        where = colPos = 1
+                    }
+                }
+            }
+        }
+
+        CUR < .NO
+        CUR {
+            wrapItemAndSub = <li class="has-sub-item sub-item-closed active current">|</li>
+        }
+
+        ACT < .NO
+        ACT {
+            wrapItemAndSub = <li class="has-sub-item sub-item-closed active">|</li>
+        }
+    }
+}
+
+
+
+################################
+#### Application navigation ####
+################################
+lib.navigation.application = HMENU
+lib.navigation.application {
+    special = list
+    special.value.current = 1
+
+    1 = TMENU
+    1 {
+        noBlur = 1
+        expAll = 1
+        NO = 1
+        NO {
+            wrapItemAndSub = <div class="col-md-6 my-col">|</div>
+            doNotLinkIt = 1
+            stdWrap.cObject = COA
+            stdWrap.cObject {
+                stdWrap.typolink.parameter.field = uid
+                stdWrap.typolink.ATagParams = class="full-height"
+                wrap = <div class="menu-item-holder-wrap full-height"><div class="table-wrap"><div class="table-cell middle-line"><div class="menu-item-holder menu-with-icon">|</div></div></div></div>
+                              
+                10 = FILES
+                10 {
+                    references { 
+                        table = pages 
+                        uid.field = uid
+                        fieldName = media 
+                    }
+                    begin = 0
+                    maxItems = 1
+                    renderObj = COA 
+                    renderObj { 
+                        10 = IMAGE 
+                        10 { 
+                            file.import.data = file:current:publicUrl
+                            file.maxW = 50
+                            file.maxH = 40
+                            stdWrap.wrap = <span>|</span>
+                        }
+                    }
+                }
+
+                20 = TEXT
+                20 {
+                    field = nav_title // title
+                    wrap = <i>|</i>
+                }
+            }
+        }
+
+        ACT < .NO
+        ACT {
+            stdWrap.cObject.stdWrap.typolink.ATagParams = class="full-height active"
+        }
+    }
+}
+
+lib.navigation.bottomApplication = HMENU
+lib.navigation.bottomApplication {
+    special = directory
+    special.value = {$page.navigation.sliderBottom}
+
+    1 = TMENU
+    1 {
+        noBlur = 1
+        expAll = 1
+        wrap = <section class="clearfix section-row pill-menu"><div class="table-wrap"><div class="table-cell middle-line"><ul>|</ul></div></div></section>
+        NO = 1
+        NO {
+            wrapItemAndSub = <li>|</li>
+            doNotLinkIt = 1
+            stdWrap.cObject = COA
+            stdWrap.cObject {
+                stdWrap.typolink.parameter.field = uid
+                stdWrap.wrap = <div class="table-wrap"><div class="table-cell middle-line">|</div></div>
+
+                10 = FILES
+                10 {
+                    references { 
+                        table = pages 
+                        uid.field = uid
+                        fieldName = media 
+                    }
+                    begin = 0
+                    maxItems = 1
+                    renderObj = COA 
+                    renderObj { 
+                        10 = IMAGE 
+                        10 { 
+                            file.import.data = file:current:publicUrl
+                            file.maxW = 50
+                            file.maxH = 40
+                        }
+                        wrap = <div class="pill-menu-img normal">|</div>
+                    }
+                }
+
+                20 = FILES
+                20 {
+                    references { 
+                        table = pages 
+                        uid.field = uid
+                        fieldName = media 
+                    }
+                    begin = 1
+                    maxItems = 1
+                    renderObj = COA 
+                    renderObj { 
+                        10 = IMAGE 
+                        10 { 
+                            file.import.data = file:current:publicUrl
+                            file.maxW = 50
+                            file.maxH = 40
+                        }
+                        wrap = <div class="pill-menu-img active">|</div>
+                    }
+                }
+
+                30 = TEXT
+                30 {
+                    field = nav_title // title
+                    wrap = <span>|</span><em><img src="{$page.theme.templatePath}Images/dark-primary-color-down-arrow.svg" alt="arrow" width="12" /></em>
+                }
+            }
+        }
+
+        ACT < .NO
+        ACT {
+            wrapItemAndSub = <li class="active">|</li>
+        }
+    }
+}
+
+
+
+############################
+#### Product navigation ####
+############################
+lib.navigation.product = HMENU
+lib.navigation.product {
+    special = list
+    special.value.current = 1
+    1 = TMENU
+    1 {
+        noBlur = 1
+        expAll = 1
+        NO = 1
+        NO {
+            wrapItemAndSub = <div class="col-md-6 my-col">|</div>
+            doNotLinkIt = 1
+            stdWrap.cObject = COA
+            stdWrap.cObject {
+                stdWrap.typolink.parameter.field = uid
+                stdWrap.typolink.ATagParams = class="full-height"
+                wrap = <div class="menu-item-holder-wrap full-height"><div class="table-wrap"><div class="table-cell middle-line"><div class="menu-item-holder menu-with-icon">|</div></div></div></div>
+
+                10 = FILES
+                10 {
+                    references { 
+                        table = pages 
+                        uid.field = uid
+                        fieldName = media 
+                    }
+                    begin = 0
+                    maxItems = 1
+                    renderObj = COA 
+                    renderObj { 
+                        10 = IMAGE 
+                        10 { 
+                            file.import.data = file:current:publicUrl
+                            file.maxW = 225
+                            stdWrap.wrap = <span>|</span>
+                        }
+                        20 = COA
+                        20 {
+                            10 = TEXT
+                            10.field = nav_title // title
+
+                            20 = TEXT
+                            20.data = file:current:title
+                            20.wrap = <em>|</em>
+
+                            wrap = <i>|</i>
+                        }
+                    }
+                }
+            }
+        }
+
+        ACT < .NO
+        ACT {
+            stdWrap.cObject.stdWrap.typolink.ATagParams = class="full-height active"
+        }
+    }
+}
+
+
+
+##########################
+#### Basic navigation ####
+##########################
+lib.navigation.basic = HMENU
+lib.navigation.basic {
+    special = list
+    special.value.current = 1
+    1 = TMENU
+    1 {
+        noBlur = 1
+        expAll = 1
+        NO = 1
+        NO {
+            wrapItemAndSub = |
+            doNotLinkIt = 1
+            stdWrap.cObject = COA
+            stdWrap.cObject {
+                stdWrap.typolink.parameter.field = uid
+                stdWrap.typolink.ATagParams = class="within-column-menu"
+                wrap = <div class="menu-item-holder-wrap full-height"><div class="table-wrap"><div class="table-cell middle-line"><div class="menu-item-holder menu-with-icon">|</div></div></div></div>
+
+                10 = TEXT
+                10.field = nav_title // title
+                10.wrap = <i>|</i>
+            }
+        }
+
+        ACT < .NO
+        ACT {
+            stdWrap.cObject.stdWrap.typolink.ATagParams = class="within-column-menu active"
+        }
+    }
+}
+
+
+
+###############################
+#### Basic Icon navigation ####
+###############################
+lib.navigation.basicIcon = HMENU
+lib.navigation.basicIcon {
+    special = list
+    special.value.current = 1
+    1 = TMENU
+    1 {
+        noBlur = 1
+        expAll = 1
+        NO = 1
+        NO {
+            wrapItemAndSub = |
+            doNotLinkIt = 1
+            stdWrap.cObject = COA
+            stdWrap.cObject {
+                stdWrap.typolink.parameter.field = uid
+                stdWrap.typolink.ATagParams = class="within-column-menu"
+                wrap = <div class="menu-item-holder-wrap full-height"><div class="table-wrap"><div class="table-cell middle-line"><div class="menu-item-holder menu-with-icon">|</div></div></div></div>
+
+                10 = FILES
+                10 {
+                    references { 
+                        table = pages 
+                        uid.field = uid
+                        fieldName = media 
+                    }
+                    begin = 0
+                    maxItems = 1
+                    renderObj = COA 
+                    renderObj { 
+                        10 = IMAGE 
+                        10 { 
+                            file.import.data = file:current:publicUrl
+                            stdWrap.wrap = <span>|</span>
+                        }
+                    }
+                }
+
+                20 = TEXT
+                20.field = nav_title // title
+                20.wrap = <i>|</i>
+            }
+        }
+
+        ACT < .NO
+        ACT {
+            stdWrap.cObject.stdWrap.typolink.ATagParams = class="within-column-menu active"
+        }
+    }
+}
+
+
+
+############################
+#### Language navigation ###
+############################
+lib.navigation.language = COA
+lib.navigation.language {
+    wrap = <li class="has-sub-item dropdown">|</li>
+
+    10 = TEXT
+    10 {
+        value = Deutsch
+        wrap = <a href="javascript:void(0)">|</a><span class="dropdown-toggle" data-toggle="dropdown"></span>
+    }
+
+    20 = HMENU
+    20 {
+        special = language
+        special.value = 0,1
+        special.normalWhenNoLanguage = 0
+
+        addQueryString = 1
+        addQueryString.method = GET
+        addQueryString.exclude = L,cHash
+
+        wrap = <div class="dropdown-menu">|</div>
+
+        1 = TMENU
+        1 {
+            NO = 1
+            NO {
+                stdWrap.htmlSpecialChars = 1
+                stdWrap.htmlSpecialChars.preserveEntities = 1
+                stdWrap {
+                    setCurrent = Deutsch||English
+                    current = 1
+                }
+                ATagParams = class="dropdown-item"
+            }
+
+            # Current language selected:
+            ACT < .NO
+            ACT {
+                ATagParams = class="dropdown-item active"
+            }
+        }
+    }
+}
+
+[siteLanguage("languageId") == 1]
+lib.navigation.language.10.value = English
+[end]
+
+lib.navigation.mobileLanguage < lib.navigation.language
+lib.navigation.mobileLanguage {
+    wrap = <li class="has-sub-item sub-item-closed visible-sm visible-xs responsive-service-nav">|</li>
+    10.wrap = <a href="javascript:void(0)">|</a><i class="visible-sm visible-xs open-sub-in-responsive"></i><div class="sub-item-indication hidden-sm hidden-xs"></div>
+    20 {
+        wrap = <div class="main-nav-sub-item clearfix single-column-center-align-hanging iconic-sub-menu"><div class="main-wrap clearfix"><div class="row"><div class="col-md-12 my-col within-column-menu-wrap">|</div></div></div></div>
+
+        1 {
+            NO {
+                ATagParams = class="within-column-menu"
+                stdWrap.innerWrap= <div class="menu-item-holder-wrap full-height"><div class="table-wrap"><div class="table-cell middle-line"><div class="menu-item-holder menu-with-icon"><i>|</i></div></div></div></div>
+            }
+            ACT {
+                ATagParams = class="within-column-menu active"
+                stdWrap.innerWrap= <div class="menu-item-holder-wrap full-height"><div class="table-wrap"><div class="table-cell middle-line"><div class="menu-item-holder menu-with-icon"><i>|</i></div></div></div></div>
+            }
+        }
+    }
+}
+
+
+
+#########################
+#### Meta navigation ####
+#########################
+lib.navigation.meta = COA
+lib.navigation.meta {
+    # wrap = <ul>|</ul>
+
+    10 = HMENU
+    10 {
+        special = list
+        special.value = {$page.navigation.websites}
+
+        1 = TMENU
+        1 {
+            noBlur = 1
+            expAll = 1
+            NO = 1
+            NO {
+                wrapItemAndSub = <li>|</li>
+                ATagTitle.field = nav_title // title
+            }
+
+            CUR < .NO
+            CUR {
+                wrapItemAndSub = <li class="active current">|</li>
+            }
+
+            ACT < .NO
+            ACT {
+                wrapItemAndSub = <li class="active">|</li>
+            }
+
+            IFSUB < .NO
+            IFSUB {
+                wrapItemAndSub = <li class="has-sub-item dropdown">|</li>
+            }
+
+            CURIFSUB = .IFSUB
+            CURIFSUB {
+                wrapItemAndSub = <li class="has-sub-item dropdown active current">|</li>
+            }
+
+            ACTIFSUB = .IFSUB
+            ACTIFSUB {
+                wrapItemAndSub = <li class="has-sub-item dropdown active">|</li>
+            }
+        }
+
+        2 = TMENU
+        2 {
+            noBlur = 1
+            expAll = 1
+            wrap = <span class="dropdown-toggle" data-toggle="dropdown"></span><div class="dropdown-menu">|</div>
+            NO = 1
+            NO {
+                ATagParams = class="dropdown-item"
+                ATagTitle.field = subtitle // title
+            }
+
+            CUR < .NO
+            CUR {
+                ATagParams = class="dropdown-item active current"
+            }
+
+            ACT < .NO
+            ACT {
+                ATagParams = class="dropdown-item active"
+            }  
+        }
+    }
+
+    20 < lib.navigation.language
+
+    /*
+    30 < .10
+    30 {
+        special = directory
+        special.value = {$page.navigation.meta}
+        excludeUidList = {$page.navigation.websites}
+    }
+    */
+
+    30 = HMENU
+    30 {
+        special = list
+        special.value = {$page.navigation.shop}
+
+        1 = TMENU
+        1 {
+            noBlur = 1
+            expAll = 1
+            NO = 1
+            NO {
+                wrapItemAndSub = <li class="cart-login">|</li>
+                linkWrap = <a href="javascript:void(0)">|</a>
+                doNotLinkIt = 1
+            }
+
+            CUR < .NO
+            CUR {
+                wrapItemAndSub = <li class="active current cart-login">|</li>
+            }
+
+            ACT < .NO
+            ACT {
+                wrapItemAndSub = <li class="active cart-login">|</li>
+            }
+
+            IFSUB < .NO
+            IFSUB {
+                wrapItemAndSub = <li class="has-sub-item dropdown cart-login">|</li>
+            }
+
+            CURIFSUB = .IFSUB
+            CURIFSUB {
+                wrapItemAndSub = <li class="has-sub-item dropdown active current cart-login">|</li>
+            }
+
+            ACTIFSUB = .IFSUB
+            ACTIFSUB {
+                wrapItemAndSub = <li class="has-sub-item dropdown active cart-login">|</li>
+            }
+        }
+
+        2 = TMENU
+        2 {
+            noBlur = 1
+            expAll = 1
+            wrap = <span class="dropdown-toggle" data-toggle="dropdown"></span><div class="dropdown-menu"><div class="login-drop-section"><div class="primary-info pull-text-center"><div class="featured-icon"><img src="{$page.theme.templatePath}Images/login-featured-icon.png" width="25" alt=""></div><div class="featured-title">{$page.kundenkonto}</div></div><hr><div class="login-drop-action">|</div></div></div>
+            NO = 1
+            NO {
+                wrapItemAndSub = <div class="login-button">|</div>|*|<div class="registration-button">|</div>
+                ATagTitle.field = subtitle // title
+            }
+        }
+    }
+}
+[frontend.user.isLoggedIn]
+lib.navigation.meta {
+    40 = COA
+    40 {
+        wrap = <li class="has-sub-item dropdown cart-login after-login">|</li>
+
+        10 = HMENU
+        10 {
+            special = list
+            special.value = {$page.navigation.kundenkonto}
+
+            1 = TMENU
+            1 {
+                noBlur = 1
+                expAll = 1
+                NO = 1
+                NO {
+                    linkWrap = <a href="javascript:void(0)">|</a>
+                    doNotLinkIt = 1
+                }
+            }
+        }
+        20 = COA
+        20 {
+            wrap = <span class="dropdown-toggle" data-toggle="dropdown"></span><div class="dropdown-menu"><div class="after-login-drop-section">|</div></div>
+
+            10 = TEXT
+            10.value = <div class="welcome-text">Hallo, <br>
+
+            11 = TEXT
+            11 {
+                stdWrap.if.isTrue.data = TSFE:fe_user|user|first_name
+                data = TSFE:fe_user|user|first_name
+                noTrimWrap = || |
+            }
+
+            12 = TEXT
+            12 {
+                stdWrap.if.isTrue.data = TSFE:fe_user|user|first_name
+                data = TSFE:fe_user|user|last_name
+            }
+
+            13 = TEXT
+            13 {
+                stdWrap.if.isFalse.data = TSFE:fe_user|user|first_name
+                data = TSFE:fe_user|user|username
+            }
+
+            15 = TEXT
+            15.value = </div>
+
+            20 = HMENU
+            20 {
+                special = directory
+                special.value = {$page.navigation.kundenkonto}
+                excludeUidList = 526
+
+                1 = TMENU
+                1 {
+                    noBlur = 1
+                    expAll = 1
+                    wrap = <div class="after-login-menu"><ul>|</ul></div>
+                    NO = 1
+                    NO {
+                        wrapItemAndSub = <li>|</li>
+                    }
+                }
+            }
+
+            30 = TEXT
+            30 {
+                value = <i><img src="{$page.theme.templatePath}Images/exit.png" width="20" alt=""></i><b>Abmelden</b>
+                typolink.parameter = {$page.login.pid}
+                typolink.additionalParams = &logintype=logout
+                wrap = <hr><div class="after-login-menu"><ul><li class="log-out">|</li></ul></div>
+            }
+        }
+    }
+}
+[end]
+[siteLanguage("languageId") == 1 && frontend.user.isLoggedIn]
+    lib.navigation.meta.40.30.value = <i><img src="{$page.theme.templatePath}Images/exit.png" width="20" alt=""></i><b>Signout</b>
+[end]
+
+
+lib.navigation.coelanShop = TEXT
+lib.navigation.coelanShop.typolink.parameter = {$page.links.coelanShop}
+lib.navigation.coelanShop.wrap = <li class="metashop-link">|</li>
+
+[siteLanguage("languageId") == 1]
+lib.navigation.coelanShop >
+lib.navigation.coelanShop = TEXT
+[end]
+
+lib.navigation.userMenu = COA
+lib.navigation.userMenu {
+    wrap = <div class="filter-sidebar">|</div>
+
+    10 = TEXT
+    10 {
+        value = <div class="sidebar-welcome-text element element-gap-small">Hallo,
+        noTrimWrap = || |
+    }
+
+    11 = TEXT
+    11 {
+        stdWrap.if.isTrue.data = TSFE:fe_user|user|first_name
+        data = TSFE:fe_user|user|first_name
+        noTrimWrap = || |
+    }
+
+    12 = TEXT
+    12 {
+        stdWrap.if.isTrue.data = TSFE:fe_user|user|first_name
+        data = TSFE:fe_user|user|last_name
+    }
+
+    13 = TEXT
+    13 {
+        stdWrap.if.isFalse.data = TSFE:fe_user|user|first_name
+        data = TSFE:fe_user|user|username
+    }
+
+    15 = TEXT
+    15.value = </div>
+
+    16 = TEXT
+    16.value = <div class="megamenu-dropdown with-non-colapse-view"><ul><li class="primary-menu"><ul class="secondary-menu">
+
+    20 = HMENU
+    20 {
+        special = list
+        special.value.current = 1
+
+        1 = TMENU
+        1 {
+            noBlur = 1
+            expAll = 1
+
+            NO = 1
+            NO {
+                wrapItemAndSub = <li>|</li>
+            }
+
+            CUR < .NO
+            CUR {
+                wrapItemAndSub = <li class="active">|</li>
+            }
+
+            ACT < .NO
+            ACT {
+                wrapItemAndSub = <li class="active">|</li>
+            }
+        }
+    }
+
+    30 = HMENU
+    30 {
+        special = list
+        special.value = 629
+
+        1 = TMENU
+        1 {
+            noBlur = 1
+            expAll = 1
+
+            NO = 1
+            NO {
+                wrapItemAndSub = <li>|</li>
+                stdWrap.wrap = <i><img src="/fileadmin/templates/kemperol/Images/sale.png" width="25" alt="" /></i><span>|</span>
+            }
+
+            CUR < .NO
+            CUR {
+                wrapItemAndSub = <li class="active">|</li>
+            }
+
+            ACT < .NO
+            ACT {
+                wrapItemAndSub = <li class="active">|</li>
+            }
+        }
+    }
+
+    40 = TEXT
+    40 {
+        value = <i><img src="/fileadmin/templates/kemperol/Images/exit.png" width="23" alt="" /></i><span>Abmelden</span>
+        typolink.parameter = {$page.login.pid}
+        typolink.additionalParams = &logintype=logout
+        wrap = <li class="log-out">|</li>
+    }
+
+    50 = TEXT
+    50.value = </ul></li></ul></div>
+}
+[siteLanguage("languageId") == 1]
+lib.navigation.userMenu.40.value = <i><img src="/fileadmin/templates/kemperol/Images/exit.png" width="23" alt="" /></i><span>Signout</span>
+[end]
+
+################################
+#### Mobile Meta navigation ####
+################################
+lib.navigation.mobileMeta = COA
+lib.navigation.mobileMeta {
+
+    10 = HMENU
+    10 {
+        special = list
+        special.value = {$page.navigation.websites}
+
+        1 = TMENU
+        1 {
+            noBlur = 1
+            expAll = 1
+            NO = 1
+            NO {
+                wrapItemAndSub = <li class="visible-sm visible-xs responsive-service-nav">|</li>
+                ATagTitle.field = nav_title // title
+            }
+
+            CUR < .NO
+            CUR {
+                wrapItemAndSub = <li class="visible-sm visible-xs responsive-service-nav active current">|</li>
+            }
+
+            ACT < .NO
+            ACT {
+                wrapItemAndSub = <li class="visible-sm visible-xs responsive-service-nav active">|</li>
+            }
+
+            IFSUB < .NO
+            IFSUB {
+                wrapItemAndSub = <li class="has-sub-item sub-item-closed visible-sm visible-xs responsive-service-nav">|</li>
+            }
+
+            CURIFSUB = .IFSUB
+            CURIFSUB {
+                wrapItemAndSub = <li class="has-sub-item sub-item-closed visible-sm visible-xs responsive-service-nav active current">|</li>
+            }
+
+            ACTIFSUB = .IFSUB
+            ACTIFSUB {
+                wrapItemAndSub = <li class="has-sub-item sub-item-closed visible-sm visible-xs responsive-service-nav active">|</li>
+            }
+        }
+
+        2 = TMENU
+        2 {
+            noBlur = 1
+            expAll = 1
+            wrap = <i class="visible-sm visible-xs open-sub-in-responsive"></i><div class="sub-item-indication hidden-sm hidden-xs"></div><div class="main-nav-sub-item clearfix single-column-center-align-hanging iconic-sub-menu"><div class="main-wrap clearfix"><div class="row"><div class="col-md-12 my-col within-column-menu-wrap">|</div></div></div></div>
+            NO = 1
+            NO {
+                ATagParams = class="within-column-menu"
+                ATagTitle.field = subtitle // title
+                stdWrap.innerWrap= <div class="menu-item-holder-wrap full-height"><div class="table-wrap"><div class="table-cell middle-line"><div class="menu-item-holder menu-with-icon"><i>|</i></div></div></div></div>
+            }
+
+            CUR < .NO
+            CUR {
+                ATagParams = class="within-column-menu active current"
+            }
+
+            ACT < .NO
+            ACT {
+                ATagParams = class="within-column-menu active"
+            }  
+        }
+    }
+
+    20 < lib.navigation.mobileLanguage
+
+    30 < .10
+    30 {
+        special = directory
+        special.value = {$page.navigation.meta}
+        excludeUidList = {$page.navigation.websites}
+    }
+}
+[frontend.user.isLoggedIn]
+lib.navigation.mobileMeta {
+    30 {
+        excludeUidList = {$page.navigation.websites},{$page.login.pid}
+    }
+}
+[end]
+
+
+###########################
+####### Breadcrumb ########
+###########################
+lib.navigation.breadcrumb = COA
+lib.navigation.breadcrumb{
+    wrap = <section class="clearfix section-row element element-gap-large"><div class="breadcrumb-module clearfix"><div class="container"><ul>|</ul></div></div></section>
+
+    10 = HMENU
+    10 {
+        special = rootline
+        special.range = 0
+        includeNotInMenu = 1
+
+        1 = TMENU
+        1 {
+            noBlur = 1
+            expAll = 1
+            NO = 1
+            NO {
+                stdWrap.cObject = COA
+                stdWrap.cObject {
+                    10 = TEXT
+                    10 {
+                        field = subtitle // nav_title // title
+                        htmlSpecialChars = 1
+                    }
+                }
+                stdWrap.htmlSpecialChars = 1
+                stdWrap.htmlSpecialChars.preserveEntities = 1
+
+                allWrap = <li>|</li>
+            }
+
+            CUR < .NO
+            CUR {
+                doNotLinkIt = 1
+                allWrap = <li class="current">|</li>
+            }
+        }
+    }
+}
+
+### breadcrumb: show title of news as last entry
+[request && traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
+    lib.navigation.breadcrumb {
+        10 {
+            includeNotInMenu = 0
+            1.NO.allWrap = <li>|</li>
+        }
+        20 = RECORDS
+        20 {
+            dontCheckPid = 1
+            tables = tx_news_domain_model_news
+            source.data = GP:tx_news_pi1|news
+            source.intval = 1
+            conf.tx_news_domain_model_news = TEXT
+            conf.tx_news_domain_model_news {
+                field = title
+                htmlSpecialChars = 1
+                wrap = <li class="current">|</li>
+            }
+        }
+    }
+[end]
+
+
+
+###########################
+#### Project navigation ###
+###########################
+lib.navigation.project = COA
+lib.navigation.project {
+    10 = COA
+    10 {
+        wrap = <div class="footer-block-head">|</div>
+
+        1 = FILES
+        1 {
+            references { 
+                table = pages 
+                uid = {$page.navigation.project}
+                fieldName = media 
+            }
+            begin = 0
+            maxItems = 1
+            renderObj = COA 
+            renderObj { 
+                10 = IMAGE 
+                10 { 
+                    file.import.data = file:current:publicUrl
+                    stdWrap.wrap = <div class="footer-head-ico"><div class="table-wrap"><div class="table-cell middle-line">|</div></div></div>
+                }
+            }
+        }
+
+        2 = HMENU
+        2 {
+          special = list
+          special.value = {$page.navigation.project}
+          wrap = <div class="footer-head-text entry"><h4>|</h4></div>
+          includeNotInMenu = 1
+          1 = TMENU
+          1 {
+            NO {
+              doNotLinkIt = 1
+            }
+          }
+        }
+    }
+
+    20 = HMENU
+    20 {
+        special = directory
+        special.value = {$page.navigation.project}
+
+        1 = TMENU
+        1 {
+            noBlur = 1
+            expAll = 1
+            wrap = <div class="footer-content entry clearfix"><p class="footer-link-item"><strong>|</strong></p></div>
+            NO = 1
+            NO {
+                wrapItemAndSub = |</br>
+                ATagTitle.field = subtitle // title
+            }
+
+            CUR < .NO
+            CUR {
+                ATagParams = class="active"
+            }
+
+            ACT < .NO
+            ACT {
+                ATagParams = class="active"
+            }
+
+            SPC = 1
+            SPC {
+                doNotShowLink = 1
+                wrapItemAndSub = </strong></p><p class="footer-link-item"><strong>|
+            }
+        }
+    }
+}
+
+
+
+###########################
+#### Footer navigation ####
+###########################
+lib.navigation.footer = COA
+lib.navigation.footer {
+    10 = COA
+    10 {
+        wrap = <div class="footer-block-head">|</div>
+
+        1 = FILES
+        1 {
+            references { 
+                table = pages 
+                uid = {$page.navigation.footer}
+                fieldName = media 
+            }
+            begin = 0
+            maxItems = 1
+            renderObj = COA 
+            renderObj { 
+                10 = IMAGE 
+                10 { 
+                    file.import.data = file:current:publicUrl
+                    stdWrap.wrap = <div class="footer-head-ico"><div class="table-wrap"><div class="table-cell middle-line">|</div></div></div>
+                }
+            }
+        }
+
+        2 = HMENU
+        2 {
+          special = list
+          special.value = {$page.navigation.footer}
+          wrap = <div class="footer-head-text entry"><h4>|</h4></div>
+          includeNotInMenu = 1
+          1 = TMENU
+          1 {
+            NO {
+              doNotLinkIt = 1
+            }
+          }
+        }
+    }
+    
+    20 = HMENU
+    20 {
+        special = directory
+        special.value = {$page.navigation.footer}
+
+        1 = TMENU
+        1 {
+            noBlur = 1
+            expAll = 1
+            wrap = <div class="footer-content entry clearfix"><p class="footer-link-item"><strong>|</strong></p></div>
+            NO = 1
+            NO {
+                wrapItemAndSub = |</br>
+                ATagTitle.field = subtitle // title
+            }
+
+            CUR < .NO
+            CUR {
+                ATagParams = class="active"
+            }
+
+            ACT < .NO
+            ACT {
+                ATagParams = class="active"
+            }
+
+            SPC = 1
+            SPC {
+                doNotShowLink = 1
+                wrapItemAndSub = </strong></p><p class="footer-link-item"><strong>|
+            }
+        }
+    }
+}
+
+
+
+############################
+#### Product navigation ####
+############################
+lib.product.list = COA
+lib.product.list {
+   wrap = <li class="primary-menu">|</li>
+
+   10 = HMENU
+   10 {
+      special = list
+      special.value = 2
+      
+        1 = TMENU
+        1 {
+            wrap = <a href="javascript:void(0)"><span>|</span></a>
+            NO = 1
+            NO {
+                doNotLinkIt = 1
+            }
+        }
+   }
+
+   20 = HMENU
+   20 {
+      special = directory
+      special.value = 2
+      
+        1 = TMENU
+        1 {
+            wrap = <ul class="secondary-menu">|</ul>
+            NO = 1
+            NO {
+                wrapItemAndSub = <li>|</li>
+                stdWrap.wrap = <i></i><span>|</span>
+            }
+        }
+   }
+}

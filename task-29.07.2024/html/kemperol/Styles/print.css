@@ -1,0 +1,22 @@
+a[href]:after { content: none !important;}
+.kemper-system .header{ position: absolute !important;}
+.header-responsive-hamberg-block{ display: none !important;}
+.header-block-menu{ display: none !important;}
+.page-top-banner{ display: none !important;}
+.breadcrumb-module{ display: none !important;}
+footer{ display: none !important;}
+#dfc-iframe{ display: none !important;}
+.element-gap-large{ margin-bottom: 0 !important;}
+.no-print{ display: none !important;}
+.page-button{ display: none !important;}
+
+.kemper-system .container{ width: 100% !important;}
+
+.kemper-system .background-content-module .background-content-holder.normal-gap{ padding: 0px !important;}
+/* .kemper-system .extreme-light-bg-section{ background-color: #F2F5F7 !important; -webkit-print-color-adjust: exact; } */
+.kemper-system .data-table-module .site-data-table > thead > tr > th{ background-color: #005192 !important; -webkit-print-color-adjust: exact; color: white !important;}
+.kemper-system .data-table-module .site-data-table > thead > tr > th{ padding: 5px 15px !important;}
+.site-form-module.cart-table-module .site-form-block{ width: 65px !important;}
+.kemper-system .site-form-module .select-field.cart-select:after{ display: none !important;}
+.ui-selectmenu-text{ margin-right: 0 !important;}
+.kemper-system .data-table-module .site-data-table.cart-system-data-table td{ word-break: break-word;}

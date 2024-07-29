@@ -1,0 +1,447 @@
+/*TEMPORARY ARROW BOUNCE FIX*/
+
+.owl-carousel .animated,
+.animated {
+    -webkit-animation-duration: 0s;
+    animation-duration: 0s;
+}
+
+.kemper-system .page-top-banner .flickity-button i {
+    overflow: visible!important;
+    height: 34px;
+}
+
+
+/*TEMPORARY ARROW BOUNCE FIX*/
+
+
+/*TEMPORARY UNDERLINE HOME BANNER LINK OFF*/
+
+.kemper-system .m-linkitem {
+    background: transparent!important;
+}
+
+.kemper-system .slider-content.entry a:hover {
+    opacity: 0.7;
+}
+
+
+/*TEMPORARY UNDERLINE HOME BANNER LINK OFF*/
+
+.kemper-system .link-box-module .link-box-element .main-wrap {
+    padding: 25px 35px 25px 10px;
+}
+
+.kemper-system .m-linkitem {
+    transition: all 0.3s linear;
+    display: inline;
+    text-decoration: none;
+    padding-bottom: 5px;
+    background: linear-gradient(to right, #005192 0%, #005192 98%);
+    background-size: 0px 2px;
+    background-repeat: no-repeat;
+    background-position: left 85%;
+}
+
+.kemper-system .lazy-section.animated {
+    -webkit-animation-duration: 2s;
+    animation-duration: 0.8s;
+}
+
+.kemper-system .container,
+.kemper-system .lazy-section {
+    position: relative;
+    overflow-x: visible;
+}
+
+.kemper-system .header.minified {
+    box-shadow: none;
+}
+
+product-list-view .main-wrap.clearfix {
+    transition: all .4s ease-in-out;
+}
+
+product-list-view .main-wrap.clearfix:hover {
+    transform: scale(1.05);
+}
+
+.kemper-system .entry h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.kemper-system .entry h4 {
+    font-size: 25px;
+}
+
+.kemper-system .slider-content.entry p {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.kemper-system .custom-animated-nav label,
+.kemper-system .custom-animated-nav a {
+    font-size: 14px;
+}
+
+.kemper-system .main-nav-sub-item.type-right-align-hanging {
+    right: -350px;
+}
+
+.kemper-system .site-form-module.type-three .site-form-label {
+    color: #005192;
+}
+
+.kemper-system .entry .head-with-img img {
+    left: -40px;
+    top: 5px;
+    max-width: 90px;
+}
+
+.kemper-system .custom-animated-nav>ul {
+    width: 335px;
+}
+
+.kemper-system .data-table-module .site-data-table tbody td.file-preview .file-preview-thumb img {
+    border: 6px solid #fff;
+    box-shadow: 1px 1px 9px #00000047;
+    background: white;
+}
+
+.kemper-system .pill-menu ul li .pill-menu-img img {
+    width: 70px;
+    margin-bottom: -8px;
+}
+
+.kemper-system .pill-menu ul li span {
+    color: #005195;
+}
+
+.kemper-system .pill-menu ul li.hovered span {
+    color: #bfd8e3;
+}
+
+.kemper-system .pill-menu ul li.hovered em {
+    display: none;
+}
+
+.footer-block-head .table-wrap img {
+    width: 70px;
+}
+
+.product-list-view .element-item {
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out
+}
+
+.product-list-view .element-item:hover {
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+}
+
+.product-list-with-filter-module.type-cart.loged-in .product-list-view .element-item:hover {
+    transform: none;
+    -webkit-transform: none;
+}
+
+.has-bg-beige ul {
+    margin-top: -17px;
+}
+
+.kemper-system footer {
+    padding: 40px 0 40px 0;
+}
+
+.kemper-system .service-nav-block {
+    margin-bottom: 0;
+}
+
+.main-nav-block {
+    margin-top: 12px;
+    margin-right: -24px;
+}
+
+.kemper-system .main-nav-block nav ul li {
+    margin: 0;
+    padding: 0 22px 12px 22px;
+}
+
+.kemper-system .service-nav-block ul li .dropdown-menu {
+    margin: 0;
+}
+
+.kemper-system .header-main-part {
+    padding: 15px 0 0 0;
+}
+
+.header-main-part.clearfix.minified-mainpart {
+    padding-bottom: 10px;
+}
+
+.cc-theme-edgeless.cc-window {
+    border: 6px solid #fff;
+    box-shadow: 1px 1px 9px #00000047;
+    background: white;
+}
+
+.has-bg-dark ul {
+    margin-top: -17px;
+}
+
+.kemper-system .service-nav-block ul li {
+    margin: 0 20px 0 0;
+}
+
+.kemper-system .news-block-module .social-post-tag {
+    width: 60px;
+    height: 60px;
+}
+
+a.within-column-menu {
+    height: 71px!important;
+}
+
+@media only screen and (max-width: 1199px) {
+    .header-wrap {
+        padding-bottom: 10px;
+    }
+    .my-col.within-column-menu-wrap {
+        margin: 10px;
+    }
+    .kemper-system .main-nav-block .main-nav-sub-item>.main-wrap>.row>.my-col:first-child {
+        margin-top: 10px
+    }
+    .kemper-system footer.my-row {
+        padding-bottom: 100px;
+    }
+    .kemper-system .main-content .default-content-slider .owl-nav button.owl-next,
+    .kemper-system .main-content .default-content-slider .owl-nav button.owl-prev {
+        width: 35px;
+    }
+    .kemper-system .site-modal.fancybox-content {
+        padding: 0 20px 0 20px;
+    }
+    .kemper-system .element.element-gap-Extralarge {
+        margin-bottom: 40px;
+    }
+    .site-modal.fancybox-content .button-width-type-three,
+    .site-modal.fancybox-content .button-width-type-four {
+        width: 100%;
+    }
+    .kemper-system .page-button.button-width-type-one {
+        width: 100%;
+    }
+    div#c560,
+    div#c1939,
+    div#c507 {
+        padding: 0;
+    }
+    .kemper-system .page-top-banner.narrow-banner .slider-content {
+        padding: 40px 35px 10px 35px;
+    }
+    .kemper-system .clearfix.section-row.element.element-gap-large {
+        margin-bottom: 40px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .kemper-system .default-content-slider .owl-nav button,
+    .kemper-system .block-slider .owl-nav button,
+    .kemper-system .product-list-slider .owl-nav button {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .kemper-system .slider-content.entry p {
+        font-size: 24px;
+        line-height: 34px;
+    }
+    .kemper-system .entry h1 {
+        font-size: 57px;
+        margin-bottom: 20px;
+    }
+    .kemper-system .slider-content.entry h4 {
+        font-size: 30px;
+    }
+}
+
+footer p,
+footer a,
+footer p strong {
+    font-size: 14px!important;
+    line-height: 22px!important;
+}
+
+.footer-head-text.entry h4 {
+    font-size: 22px;
+}
+
+.kemper-system footer .entry a:hover {
+    color: #c5d7e2;
+}
+
+.special-numeric-list-item li span {
+    font-size: 48px !important;
+}
+
+.kemper-system .special-numeric-list-item li i {
+    font-size: 31px;
+    line-height: 45px;
+    width: 45px;
+    height: 45px;
+}
+
+.kemper-system .tx-powermail .powermail_fieldset.powermail_fieldset_2 {
+    margin-top: 0px;
+}
+
+li.ui-selectmenu-optgroup.ui-menu-divider {
+    color: #ffffff;
+    padding: 11px!important;
+    background: #608290;
+}
+
+.custom-animated-nav .ui-menu-item>div:hover {
+    color: #6a818e!important;
+    cursor: pointer;
+}
+
+.footersocial:hover {
+    opacity: 0.4;
+    cursor: pointer;
+}
+
+.kemper-system .speach-item p {
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.kemper-system .speach-item p:before {
+    display: none;
+}
+
+.legend {
+    color: #005192;
+    border-bottom: 1px solid #bfd8e3;
+}
+
+input#femanager_field_submit {
+    color: #005192 !important;
+    background-color: #f8f4ea;
+    border: none;
+    font-family: "HelveticaNeue-bold";
+}
+
+.kemper-system .page-button {
+    padding: 10px 50px 6px 15px;
+}
+
+.radio,
+.checkbox {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-left: 19px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.kemper-system .entry h4 {
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 1099px) {
+    .main-nav-sub-item {
+        box-shadow: none;
+    }
+    .kemper-system .main-nav-sub-item .menu-with-icon i {
+        font-size: 15px;
+    }
+    .kemper-system .main-nav-sub-item.product-sub-menu .menu-with-icon i {
+        max-width: 60%;
+    }
+}
+
+.kemper-system .container-fluid {
+    width: 100%;
+}
+
+.testimonial-content .entry p:nth-child(2) {
+    font-family: "HelveticaNeue-bold";
+}
+
+@media screen and (max-width: 1099px) {
+    .kemper-system .entry h3 {
+        font-size: 30px;
+    }
+}
+
+a.sg-cookie-optin-box-copyright-link {
+    display: none!important;
+}
+
+.kemper-system .service-nav-block ul li.metashop-link>a{
+  color:#005192;
+}
+.kemper-system .service-nav-block ul li.metashop-link>a:hover{
+  color:#C5D7E2;
+}
+
+span.product-price-bottom-text a {
+    color: #6A818E;
+}
+
+
+/* Cookie */
+.cc-window.cc-top-left{
+  max-width:30em;
+  border-radius: 5px;
+}
+.cc-window.cc-top-left, .cc-window.cc-bottom-left{
+  left: 50%;
+  top: 36px;
+  margin-left:-15em;
+}
+.cc-window:before{
+  position:fixed;
+  z-index:9998;
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+  background:rgba(0,0,0,0.5);
+  content:'';
+}
+.cc-window .cc-body{
+  position:relative;
+  z-index:9999;
+  background:#fff;
+  color: #333;
+  border-radius: 5px;
+}
+.cc-window .dp--cookie-check{
+  border:1px solid #999;
+  border-radius:3px;
+}
+.cc-message strong{
+  font-weight: 700;
+  font-size: 18px;
+  display:block;
+  padding-bottom:5px;
+}
+
+@media screen and (max-width: 500px) {
+.cc-window.cc-top-left, .cc-window.cc-bottom-left{
+  left: 0;
+  top: 0;
+  margin-left:0;
+}
+}
+
+.kemper-system ul.powermail-errors-list{
+  margin-top: 0;
+}

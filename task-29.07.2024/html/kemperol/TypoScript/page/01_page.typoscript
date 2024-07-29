@@ -1,0 +1,141 @@
+##############
+#### PAGE ####
+##############
+page = PAGE
+page {
+    typeNum = 0
+
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = TEXT
+        templateName.stdWrap.cObject = CASE
+        templateName.stdWrap.cObject {
+            key.data = levelfield:-1, backend_layout_next_level, slide
+            key.override.field = backend_layout
+
+            default = TEXT
+            default.value = Default
+
+            pagets__homepage = TEXT
+            pagets__homepage.value = Homepage
+
+            pagets__default = TEXT
+            pagets__default.value = Default
+
+            pagets__defaultmenu = TEXT
+            pagets__defaultmenu.value = Default
+
+            pagets__news = TEXT
+            pagets__news.value = NewsDetail
+
+            pagets__search = TEXT
+            pagets__search.value = SearchDetail
+
+        }
+
+        templateRootPaths {
+            0 = fileadmin/templates/kemperol/Resources/Templates/
+            1 = {$page.theme.templatePath}Resources/Templates/
+        }
+        partialRootPaths {
+            0 = fileadmin/templates/kemperol/Resources/Partials/
+            1 = {$page.theme.templatePath}Resources/Partials/
+        }
+        layoutRootPaths {
+            0 = fileadmin/templates/kemperol/Resources/Layouts/
+            1 = {$page.theme.templatePath}Resources/Layouts/
+        }
+
+
+        ################
+        ### SETTINGS ###
+        ################
+        settings {
+            links{
+                root = {$page.links.root}
+            }
+            logo {
+                file = {$page.logo.file}
+                alt = {$page.logo.alt}
+            }
+            templatePath = {$page.theme.templatePath}
+            search.targetPid = {$page.search.targetPid}
+        }
+    }
+
+    ## Body Class
+    bodyTag >
+    bodyTagCObject = TEXT
+    bodyTagCObject.value = kemper-system inner-page
+    bodyTagCObject.wrap = <body class="|">
+
+}
+
+[getTSFE()?.id == {$page.links.root}]
+    page.bodyTagCObject.value = kemper-system start-page
+[end]
+
+[3 in backend.user.userGroupIds]
+    page.bodyTagCObject.value = kemper-system inner-page cart-logged-in
+[end]
+
+[3 in backend.user.userGroupIds && getTSFE()?.id == {$page.links.root}]
+    page.bodyTagCObject.value = kemper-system start-page cart-logged-in
+[end]
+
+## Powermail
+plugin.tx_powermail.settings.misc.htmlForHtmlFields = 1
+
+## News title
+[request && traverse(request.getQueryParams(), 'tx_news_pi1/news') > 0]
+    config.noPageTitle = 2
+
+    lib.newsTitle = RECORDS
+    lib.newsTitle {
+        dontCheckPid = 1
+        tables = tx_news_domain_model_news
+        source.data = GP:tx_news_pi1|news
+        source.intval = 1
+        conf.tx_news_domain_model_news = TEXT
+        conf.tx_news_domain_model_news {
+            field = title
+            htmlSpecialChars = 1
+        }
+    }
+    page.headerData.1 = COA
+    page.headerData.1 {
+        10 < lib.newsTitle
+        20 = TEXT
+        20.data = DB:sys_template:1:sitetitle
+        20.noTrimWrap = |: ||
+
+        wrap = <title>|</title>
+    }
+[end]
+
+# Indexedsearch
+plugin.tx_indexedsearch {
+    settings {
+        displayAdvancedSearchLink = 0
+        breadcrumbWrap = |<span>&nbsp;&#124;&nbsp;</span>
+    }
+    _LOCAL_LANG {
+        de {
+            searchFor = Suchergebnisse für
+        }
+        en {
+            searchFor = Search for
+        }
+    }
+}
+
+## Frame class
+tt_content.stdWrap.innerWrap.cObject = CASE
+tt_content.stdWrap.innerWrap.cObject {
+    key.field = frame_class
+    cookie-german = TEXT
+    cookie-german.value = <dp-content data-cookieconsent="marketing" class="dp--iframe" data-cookieconsent-notice="Cookie-Hinweis" data-cookieconsent-description="Bitte akzeptieren Sie Cookies, um diesen Inhalt anzuzeigen." data-cookieconsent-btn="Cookies zulassen">|</dp-content>
+
+    cookie-english = TEXT
+    cookie-english.value = <dp-content data-cookieconsent="marketing" class="dp--iframe" data-cookieconsent-notice="Cookie notice" data-cookieconsent-description="Please allow the cookie to display this content." data-cookieconsent-btn="Allow cookies">|</dp-content>
+}

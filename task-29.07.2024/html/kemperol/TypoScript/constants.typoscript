@@ -1,0 +1,163 @@
+############
+### PAGE ###
+############
+page {
+    links {
+        # cat=Template: basic/100/110; type=string; label=Root: PID of root page
+        root = 1
+        # cat=Template: basic/100/120; type=string; label=Root: PID of footer address stroage
+        footerAddress = 8
+        # cat=Template: basic/100/120; type=string; label=Root: PID of Coelan Shop Page
+        coelanShop = 707
+    }
+
+    meta {
+        # cat=Template: meta/120/100; type=string; label=Description: Enter a short description of the page. It will be displayed in the result lists of most search engines.
+        description =
+        # cat=Template: meta/120/110; type=string; label=Author: Enter the page author's name.
+        author =
+        # cat=Template: meta/120/120; type=string; label=Keywords: Enter keywords for the page separated by commas. You may also use short phrases.
+        keywords =
+        # cat=Template: meta/120/100; type=string; label=viewport
+        viewport = width=device-width, initial-scale=1
+        # cat=Template: meta/120/110; type=string; label=robots
+        robots = index,follow
+        # cat=Template: meta/120/120; type=string; label=apple-mobile-web-app-capable
+        apple-mobile-web-app-capable = no
+        # cat=Template: meta/120/130; type=string; label=compatible
+        compatible = IE=edge
+        # cat=Template: meta/120/140; type=string; label=google
+        google = notranslate
+    }
+
+    logo {
+        # cat=Template: logo/110/110; type=string; label=Logo image path
+        file = Images/site-logo_kemperol.jpg
+        # cat=Template: logo/110/120; type=string; label=Alternative text of the logo image
+        alt = KEMPEROL Logo
+    }
+
+    navigation {
+        # cat=Template: navigation/140/100; type=string; label=PID of meta navigation
+        meta = 25
+        # cat=Template: navigation/140/110; type=string; label=PID of websites navigation
+        websites = 26
+        # cat=Template: navigation/140/120; type=string; label=PID of slider bottom navigation
+        sliderBottom = 2
+        # cat=Template: navigation/140/130; type=string; label=PID of project navigation
+        project = 9
+        # cat=Template: navigation/140/140; type=string; label=PID of footer navigation
+        footer = 10
+        # cat=Template: navigation/140/150; type=string; label=PID of header shop navigation
+        shop = 548
+        # cat=Template: navigation/140/150; type=string; label=PID of header kundenkonto navigation
+        kundenkonto = 549
+    }
+
+    theme {
+        # cat=Template: basic/160/100; type=string; label=Template Path
+        templatePath = fileadmin/templates/kemperol/
+    }
+
+    tracking {
+        google {
+            # cat=Template: google/180/100; type=string; label=Google: Tracking-ID
+            trackingID =
+            # cat=Template: google/180/110; type=boolean; label=Google: IP-anonymisation
+            anonymizeIp = 1
+        }
+    }
+
+    news {
+        # cat=Template: news/150/100; type=string; label=News: Single PID
+        single =
+        # cat=Template: news/150/110; type=string; label=News: List PID
+        list =
+    }
+
+    login {
+        # cat=Template: login/130/100; type=string; label=Login: Page ID
+        pid = 28
+        # cat=Template: login/130/110; type=string; label=Login: Storage PID
+        storagePid = 71
+    }
+
+    # cat=Template: login/190/100; type=string; label=Search: Result PID
+    search.targetPid = 468
+
+    kundenkonto = Kundenkonto
+}
+
+[siteLanguage("languageId") == 1]
+page {
+    kundenkonto = Customer account
+}
+[end]
+
+##############
+### CONFIG ###
+##############
+config {
+    # cat=Template: advanced/170/100; type=boolean; label=Base URL
+    baseUrl = https://kemperol.kemper-system.de
+    # cat=Template: advanced/170/110; type=boolean; label=No Cache
+    no_cache = 1
+    # cat=Template: advanced/170/120; type=options[Do not remove=0,Remove=1,Move to external file=external]; label=Remove default JavaScript
+    removeDefaultJS = 0
+    # cat=Template: advanced/170/125; type=options[Do not remove=0,Remove=1,Move to external file=external]; label=Remove default Styles
+    removeDefaultCss = 0
+    # cat=Template: advanced/170/130; type=boolean; label=Compress JavaScript
+    compressJs = 0
+    # cat=Template: advanced/170/140; type=boolean; label=Compress Css
+    compressCss = 0
+    # cat=Template: advanced/170/150; type=boolean; label=Concatenate JavaScript
+    concatenateJs = 0
+    # cat=Template: advanced/170/160; type=boolean; label=Concatenate Css
+    concatenateCss = 0
+    # cat=Template: advanced/170/170; type=boolean; label=Admin Panel
+    admPanel = 0
+    # cat=Template: advanced/170/180; type=options[None=,All=all,Cached=cached,Output=output]; label=Prefix local Anchors: See [http://docs.typo3.org/typo3cms/TyposcriptReference/Setup/Config/Index.html#prefixlocalanchors] for explanation.
+    prefixLocalAnchors = all
+    # cat=Template: advanced/170/190; type=string; label=Header Comment
+    headerComment = KEMPEROL - die Marke für hochwertige Flüssigabdichtungen und Beschichtungen ist seit 60 Jahren der Problemlöser für schwierige Abdichtungsfälle.
+    # cat=Template: advanced/170/200; type=boolean; label=Force images preload: Preload images even when not visible on page to allow print
+    preloadImages = 0
+    # cat=Template: advanced/170/210; type=boolean; label=Send cache headers: Allow appropriate caching by transparent proxies and browser clients
+    sendCacheHeaders = 1
+    # spamprotect
+    spamProtectEmailAddresses = ascii
+}
+
+
+#############################
+### BASCI CONTENT WRAPPER ###
+#############################
+styles.templates.layoutRootPath = fileadmin/templates/kemperol/Resources/Content/
+
+#############################
+########## News #############
+#############################
+plugin.tx_news {
+    view {
+        templateRootPath = fileadmin/templates/kemperol/Resources/Extensions/News/Templates/
+        partialRootPath = fileadmin/templates/kemperol/Resources/Extensions/News/Partials/
+        layoutRootPath = fileadmin/templates/kemperol/Resources/Extensions/News/Layouts/
+    }
+}
+
+## Powermail
+#############################
+######### Powermail #########
+#############################
+plugin.tx_powermail.settings.misc.htmlForHtmlFields = 1
+
+
+#############################
+########## Search ###########
+#############################
+plugin.tx_indexedsearch{
+    view.templateRootPath = fileadmin/templates/kemperol/Resources/Extensions/Search/Templates/
+    view.partialRootPath = fileadmin/templates/kemperol/Resources/Extensions/Search/Partials/
+    view.layoutRootPath = fileadmin/templates/kemperol/Resources/Extensions/Search/Layouts/
+    settings.rootPidList = 1
+}

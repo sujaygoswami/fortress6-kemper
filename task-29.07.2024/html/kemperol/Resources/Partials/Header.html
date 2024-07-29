@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://xsd.helmut-hummel.de/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<f:section name="Main">
+  <header class="my-row header">
+    <div class="header-wrap">
+      <div class="container">
+        <div class="header-main-part clearfix">
+
+          <f:render partial="Header/Logo" section="Main" />
+          <div class="header-block header-responsive-hamberg-block hidden-md hidden-lg">
+            <div class="decorative-mobile-hamberger inactive">
+              <input type="checkbox">
+              <span class="menu">
+                  <span class="hamburger"></span>
+                </span>
+            </div>
+            <div class="mobile-cart">
+              <ul class="cart-icon">
+                <f:cObject typoscriptObjectPath="lib.cartMenu"/>
+              </ul>
+            </div>
+            <f:render partial="Header/Search" section="Main" />
+          </div>
+          <div class="header-block header-block-menu animated inactive">
+            <f:render partial="Header/Search" section="Main" />
+            <f:render partial="Header/MetaNavi" section="Main" />
+            <f:render partial="Header/MainNavi" section="Main" />
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+  
+
+</f:section>
+
+</html>

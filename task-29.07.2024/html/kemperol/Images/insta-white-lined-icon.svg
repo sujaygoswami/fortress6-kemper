@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38.395 38.5">
+  <defs>
+    <style>.cls-1,.cls-2{fill:#fff}.cls-2{stroke:#fff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:1.775px}</style>
+  </defs>
+  <g id="Group_2027" data-name="Group 2027">
+    <g id="Group_2017" data-name="Group 2017">
+      <g id="Group_1892" data-name="Group 1892">
+        <path id="Path_635" data-name="Path 635" class="cls-1" d="M28.6 38.5H9.78A9.8 9.8 0 0 1 0 28.72V9.78A9.8 9.8 0 0 1 9.78 0H28.6a9.8 9.8 0 0 1 9.78 9.78V28.6a9.75 9.75 0 0 1-9.78 9.9zM9.78 2.228A7.714 7.714 0 0 0 2.1 9.9v18.82a7.714 7.714 0 0 0 7.68 7.68H28.6a7.714 7.714 0 0 0 7.675-7.675V9.78A7.714 7.714 0 0 0 28.6 2.1l-18.82.128z"></path>
+      </g>
+      <g id="Group_1893" data-name="Group 1893">
+        <path id="Path_636" data-name="Path 636" class="cls-1" d="M37.385 14.484H23.768a1.114 1.114 0 1 1 0-2.228h13.494a1.11 1.11 0 0 1 1.114 1.114.948.948 0 0 1-.99 1.114z"></path>
+      </g>
+      <g id="Group_1894" data-name="Group 1894">
+        <path id="Path_637" data-name="Path 637" class="cls-1" d="M14.36 14.484H1.114a1.114 1.114 0 1 1 0-2.228H14.36a1.114 1.114 0 0 1 0 2.228z"></path>
+      </g>
+      <g id="Group_1895" data-name="Group 1895">
+        <path id="Path_638" data-name="Path 638" class="cls-1" d="M19.188 27.73a8.542 8.542 0 1 1 8.542-8.542 8.56 8.56 0 0 1-8.542 8.542zm0-14.855a6.313 6.313 0 1 0 6.313 6.313 6.26 6.26 0 0 0-6.312-6.314z"></path>
+      </g>
+      <g id="Group_1896" data-name="Group 1896">
+        <path id="Path_639" data-name="Path 639" class="cls-1" d="M31.69 11.637h-4.95a1.11 1.11 0 0 1-1.115-1.114V5.57a1.11 1.11 0 0 1 1.114-1.113h4.95a1.11 1.11 0 0 1 1.115 1.114v4.953a1.306 1.306 0 0 1-1.114 1.114zM27.854 9.41h2.723V6.684h-2.723z"></path>
+      </g>
+    </g>
+  </g>
+</svg>

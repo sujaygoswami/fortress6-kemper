@@ -1,0 +1,22 @@
+<f:if condition="{data.sys_language_uid}">
+ <f:then>
+   <strong class="sg-cookie-optin-box-header">Privacy Settings</strong> 
+Cookies are used on our website. Some of these are mandatory, while others allow us to improve your user experience on our website. 
+   </f:then>
+  <f:else>
+    <strong class="sg-cookie-optin-box-header">Datenschutzeinstellungen</strong> 
+Auf unserer Webseite werden Cookies verwendet. Einige davon werden zwingend benötigt, während es uns andere ermöglichen, Ihre Nutzererfahrung auf unserer Webseite zu verbessern. 
+  </f:else>
+</f:if>
+
+<f:if condition="{settings.url}">
+    <a aria-label="learn more about cookies"
+       role=button tabindex="0"
+       class="cc-link"
+       href="{f:uri.page(pageUid:'{settings.url}')}"
+       rel="noopener noreferrer nofollow"
+       target="{settings.target}"
+    >
+        <f:translate key="link" extensionName="dp_cookieconsent" />
+    </a>
+</f:if>

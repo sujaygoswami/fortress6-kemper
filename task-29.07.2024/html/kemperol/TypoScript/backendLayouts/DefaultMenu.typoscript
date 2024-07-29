@@ -1,0 +1,45 @@
+// defining backend layout for default (sub) page with menu content
+mod {
+	web_layout {
+		BackendLayouts {
+
+			defaultmenu {
+				title = Default Template with menu content
+				description = Website default BE template with menu content
+				config {
+					backend_layout {
+						colCount = 1
+						rowCount = 3
+						rows {
+							1 {
+								columns {
+									1 {
+										name = Banner
+										colPos = 3
+									}
+								}
+							}
+							2 {
+								columns {
+									1 {
+										name = Content
+										colPos = 0
+									}
+								}
+							}
+							3 {
+								columns {
+									1 {
+										name = Menu content
+										colPos = 1
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

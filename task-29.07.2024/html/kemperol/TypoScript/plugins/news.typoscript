@@ -1,0 +1,246 @@
+plugin.tx_news {
+
+  settings {
+    defaultDetailPid = {$page.news.single}
+    backPid = {$page.news.list}
+
+    displayDummyIfNoMedia = 0
+
+    list {
+      paginate {
+        insertAbove = 0
+        insertBelow = 0
+        prevNextHeaderTags = 0
+        maximumNumberOfLinks = 1000
+      }
+    }
+
+    detail {
+      media {
+        image {
+          lightbox {
+            enabled = 0
+          }
+        }
+
+      }
+    }
+  }
+
+  # Modify the translation
+    _LOCAL_LANG {
+      de {
+          more-link = Mehr erfahren
+          paginate_previous = <
+          paginate_next = >
+          back-link = zurück zur Übersicht
+          related-news = Ähnliche Artikel
+          search-text = Es gibt %1$s Ergebnisse
+          search-noresult = Keine Neuigkeiten gefunden.
+          search-minimumDate = Zeitraum
+          search-subject = Durchsuchen
+          categories = Kategorie
+      }
+      en {
+          more-link = Learn more
+          paginate_previous = <
+          paginate_next = >
+          back-link = Back to overview
+          related-news = Similar Articles
+          search-text = There are %1$s results
+          search-noresult = No news found.
+          search-minimumDate = Period
+          search-subject = Search
+          categories = Category
+      }
+    }
+
+}
+
+lib.news.download = TEXT
+lib.news.download {
+  value = Kalender download
+}
+
+lib.news.share = TEXT
+lib.news.share {
+  value = Teilen
+}
+
+lib.news.dateTitle = TEXT
+lib.news.dateTitle {
+  value = Veröffentlicht:
+}
+
+lib.news.dateFromTitle = TEXT
+lib.news.dateFromTitle {
+  value = Zeitraum:
+}
+
+lib.news.catTitle = TEXT
+lib.news.catTitle {
+  value = Kategorie:
+}
+
+[siteLanguage("languageId") == 1]
+lib.news.download.value = Calender download
+lib.news.share.value = Share
+lib.news.dateTitle.value = Released:
+lib.news.dateFromTitle.value = Period:
+lib.news.catTitle.value = Category:
+[end]
+
+lib.news.categories = COA
+lib.news.categories {
+  5 = TEXT
+  5 {
+    data = gp:tx_news_pi1|overwriteDemand|categories
+    wrap = <input type="hidden" id="newsCategory" name="newsCategory" value="|" />
+  }
+  10 = TEXT
+  10 {
+    typolink.parameter.data = page:uid
+    typolink.returnLast = url
+    dataWrap = <form name="search" action="|" method="get" class="search-category"><input type="hidden" name="tx_news_pi1[overwriteDemand][categoryConjunction]" value="or" />
+  }
+  20 = TEXT
+  20 {
+    value.current = 1
+    wrap = <div class="site-form-field select-field"><select id="catSelect" name="tx_news_pi1[overwriteDemand][categories]" onchange="this.form.submit()"><option value="|"></option>
+  }
+  30 = RECORDS
+  30 {
+    source.current = 1
+    tables = sys_category
+    conf.sys_category = TEXT
+    conf.sys_category {
+      field = title
+      dataWrap = <option value="{field:uid}">|</option>
+      dataWrap.override =  <option value="{field:uid}" selected>|</option>
+      dataWrap.override.if {
+        value.data = GP:tx_news_pi1|overwriteDemand|categories
+        equals.field = uid
+      }
+    }
+  }
+  50 = TEXT
+  50 {
+    value = </select></div></form>
+  }
+}
+
+lib.news.catFromPid = COA
+lib.news.catFromPid {
+  5 = TEXT
+  5 {
+    data = gp:tx_news_pi1|overwriteDemand|categories
+    wrap = <input type="hidden" id="newsCategory" name="newsCategory" value="|" />
+  }
+  10 = TEXT
+  10 {
+    typolink.parameter.data = page:uid
+    typolink.returnLast = url
+    dataWrap = <form name="search" action="|" method="get" class="search-category"><input type="hidden" name="tx_news_pi1[overwriteDemand][categoryConjunction]" value="or" />
+  }
+  20 = CONTENT
+  20 {
+    table = sys_category
+      select {
+          pidInList.current = 1
+          selectFields = *
+          orderBy = sys_category.sorting
+      }
+      renderObj = TEXT
+      renderObj {
+          field = uid
+          wrap = ,|
+      }
+      stdWrap.substring = 1
+    stdWrap.wrap = <div class="site-form-field select-field"><select id="catSelect" name="tx_news_pi1[overwriteDemand][categories]" onchange="this.form.submit()"><option value="|"></option>
+  }
+  30 = CONTENT
+  30 {
+      table = sys_category
+      select {
+          pidInList.current = 1
+          selectFields = *
+          orderBy = sys_category.sorting
+      }
+      renderObj = TEXT
+      renderObj {
+          field = title
+          dataWrap = <option value="{field:uid}">|</option>
+          dataWrap.override =  <option value="{field:uid}" selected>|</option>
+        dataWrap.override.if {
+          value.data = GP:tx_news_pi1|overwriteDemand|categories
+          equals.field = uid
+        }
+      }
+    }
+    50 = TEXT
+  50 {
+    value = </select></div></form>
+  }
+}
+
+lib.news.searchForm = USER
+lib.news.searchForm {
+      userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+      pluginName = NewsSearchForm
+      vendorName = GeorgRinger
+      extensionName = News
+      controller = News
+      settings =< plugin.tx_news.settings
+      persistence =< plugin.tx_news.persistence
+      view =< plugin.tx_news.view
+}
+
+lib.news.langcategories = TEXT
+lib.news.langcatFromPid = TEXT
+
+[siteLanguage("languageId") == 1]
+lib.news.langcategories = COA
+lib.news.langcategories {
+   wrap = <select id="default-category">|</select>
+   10 = RECORDS
+   10 {
+    source.current = 1
+    tables = sys_category
+    conf.sys_category = TEXT
+    conf.sys_category {
+      field = title
+      dataWrap = <option value="{field:uid}">|</option>
+      dataWrap.override =  <option value="{field:uid}" selected>|</option>
+      dataWrap.override.if {
+        value.data = GP:tx_news_pi1|overwriteDemand|categories
+        equals.field = uid
+      }
+      languageField = sys_language_uid
+    }
+  }
+}
+
+lib.news.langcatFromPid = COA
+lib.news.langcatFromPid {
+    wrap = <select id="language-category">|</select>
+    10 = CONTENT
+    10 {
+      table = sys_category
+      select {
+          pidInList.current = 1
+          selectFields = *
+          orderBy = sys_category.sorting
+      }
+      renderObj = TEXT
+      renderObj {
+          field = title
+          dataWrap = <option value="{field:uid}" data-origuid="{field:t3_origuid}">|</option>
+          dataWrap.override =  <option value="{field:uid}" data-origuid="{field:t3_origuid}" selected>|</option>
+          dataWrap.override.if {
+          value.data = GP:tx_news_pi1|overwriteDemand|categories
+          equals.field = uid
+        }
+      }
+    }
+}
+[end]

@@ -1,0 +1,120 @@
+# Load default processing options
+imports:
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+    - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+# Add configuration for the editor
+# For complete documentation see http://docs.ckeditor.com/#!/api/CKEDITOR.config
+editor:
+  config:
+
+    contentsCss: "/fileadmin/templates/kemperol/Styles/rte.css"
+
+    stylesSet:
+      # Inline styles
+      - { name: "Numeric List", element: "ol", attributes: { "class": "special-numeric-list-item" } }
+      - { name: "Plus List", element: "ul", attributes: { "class": "plus-bullet-list" } }
+      - { name: "No Bottom Margin", element: "h5", attributes: { "class": "no-bottom-margin" } }
+
+    format_tags: "p;h1;h2;h3;h4;h5;h6"
+
+    toolbarGroups:
+      - { name: styles, groups: [ styles, format ] }
+      - { name: basicstyles, groups: [ basicstyles ] }
+      - { name: paragraph, groups: [ list, indent, blocks, align ] }
+      - { name: links, groups: [ links ] }
+      - { name: clipboard, groups: [ clipboard, cleanup, undo ] }
+      - { name: editing, groups: [ spellchecker ] }
+      - { name: insert, groups: [ insert ] }
+      - { name: tools, groups: [ specialchar ] }
+      - { name: document, groups: [ mode ] }
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+
+    removeButtons:
+      - Anchor
+      - Underline
+      - Strike
+      - Blockquote
+#      - Table
+#      - HorizontalRule
+
+#Classes config
+classesAnchor:
+  linkInternal:
+    class: 'link-internal'
+    type: 'page'
+  linkInternalArrow:
+    class: 'link-internal-arrow'
+    type: 'page'
+  linkInternalButton:
+    class: 'link-internal-button'
+    type: 'page'
+  linkInternalBlank:
+    class: 'link-internal-blank'
+    type: 'page'
+    target: '_blank'
+  linkUnderline:
+    class: 'link-underline'
+    type: 'page'
+  linkDownload:
+    class: 'link-download'
+    type: 'file'
+  linkDownloadArrow:
+    class: 'link-download-arrow'
+    type: 'file'
+  linkExternal:
+    class: 'link-external'
+    type: 'url'
+  linkExternalArrow:
+    class: 'link-external-arrow'
+    type: 'url'
+  linkExternalButton:
+    class: 'link-external-button'
+    type: 'url'
+  linkExternalBlank:
+    class: 'link-external-blank'
+    type: 'url'
+    target: '_blank'
+  linkPhone:
+    class: 'link-phone'
+    type: 'url'
+  linkMail:
+    class: 'link-mail'
+    type: 'mail'
+
+buttons:
+  link:
+    options:
+      removeItems: folder
+    relAttribute:
+#      enabled: true
+    properties:
+      class:
+        allowedClasses: 'link-internal,link-internal-arrow,link-internal-button,link-internal-blank,link-underline,link-download,link-download-arrow,link-external,link-external-arrow,link-external-button,link-external-blank,link-phone,link-mail'
+    page:
+      properties:
+        class:
+          default: 'link-internal'
+      relAttribute:
+        enabled: false
+    file:
+      properties:
+        class:
+          default: 'link-download'
+    url:
+      properties:
+        class:
+          default: 'link-external-blank'
+    mail:
+      properties:
+        class:
+          default: 'link-mail'

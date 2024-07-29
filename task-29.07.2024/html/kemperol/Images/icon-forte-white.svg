@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <defs>
+    <style>.cls-1{fill:none;stroke:#ffffff;stroke-linecap:round;stroke-linejoin:round;stroke-width:6px;}</style>
+  </defs>
+  <title>181105_KEMPEROL_Anwendungsgebiete</title>
+  <g id="Denkmal">
+    <line class="cls-1" x1="43.49" y1="157.16" x2="148.51" y2="157.16"></line>
+    <polyline class="cls-1" points="55.02 77.08 55.02 157.16 136.98 157.16 136.98 77.08"></polyline>
+    <line class="cls-1" x1="66.67" y1="90.6" x2="86.63" y2="90.6"></line>
+    <line class="cls-1" x1="82.94" y1="109.42" x2="102.9" y2="109.42"></line>
+    <line class="cls-1" x1="107.48" y1="90.6" x2="127.44" y2="90.6"></line>
+    <path class="cls-1" d="M112.84,156V144.19c0-11.29-7.58-20.53-16.84-20.53h0c-9.26,0-16.84,9.24-16.84,20.53V156"></path>
+    <line class="cls-1" x1="49.96" y1="63.65" x2="143.53" y2="63.65"></line>
+    <polygon class="cls-1" points="129.54 38.84 129.54 49.66 114.47 49.66 114.47 38.84 103.39 38.84 103.39 49.66 88.32 49.66 88.32 38.84 77.23 38.84 77.23 49.66 62.16 49.66 62.16 38.84 48.47 38.84 48.47 65.94 54.57 76.93 137.43 76.93 143.53 65.43 143.53 38.84 129.54 38.84"></polygon>
+  </g>
+</svg>

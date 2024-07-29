@@ -1,0 +1,42 @@
+<html
+	xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/SearchForm.html
+-->
+
+<f:section name="content">
+	<div class="site-form-block col-5 col-tab-3 col">
+		<n:searchForm object="{search}" name="search" pageUid="{settings.listPid}" method="get">
+			<label class="site-form-label"><f:translate key="search-minimumDate" /></label>
+			<div class="site-form-tiny-columns clearfix has-form-to-system">
+				<div class="form-two-indicator">-</div>
+				<div class="col-2 col">
+					<div class="site-form-field">
+						<f:form.textfield id="news-minimumDate" property="minimumDate" type="text" class="site-form-input date-input" placeholder="tt.mm.yyyy"/>
+					</div>
+				</div>
+
+				<div class="col-2 col">
+					<div class="site-form-field site-form-search-box">
+						<f:form.textfield id="news-maximumDate" property="maximumDate" type="text" class="site-form-input date-input" placeholder="tt.mm.yyyy"/>
+						<f:form.submit value="" class="search-submit"/>
+					</div>
+				</div>
+			</div>
+		</n:searchForm>
+	</div>
+
+	<div class="site-form-block col-4 col-tab-3 col place-right">
+		<n:searchForm object="{search}" name="search" pageUid="{settings.listPid}" method="get">
+			<label for="news-subject" class="site-form-label"><f:translate key="search-subject" /></label>
+			<div class="site-form-field site-form-search-box">
+				<f:form.textfield id="news-subject" property="subject" class="site-form-input" />
+				<f:form.submit value=" " class="search-submit" />
+			</div>
+		</n:searchForm>
+	</div>
+</f:section>
+</html>

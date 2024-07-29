@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Templates for felogin</title>
+</head>
+<body>
+
+<h1>Common markers</h1>
+<p>These are substituted in all felogin item displaying templates.</p>
+
+<h2>Markers</h2>
+<ul>
+  <li>###ACTION_URI###     - URI of the request for the login/logout form</li>
+  <li>###EXTRA_HIDDEN###   - Hook required (additional hidden field used by kb_md5fepw extension by Kraft Bernhard)</li>
+  <li>###ON_SUBMIT###      - Hook required (used by kb_md5fepw extension by Kraft Bernhard)</li>
+  <li>###PREFIXID###       - Same as class name ('tx_felogin_pi1') useful to get a unique classname prefix</li>
+  <li>###REDIRECT_URL###   - URL of redirection upon login</li>
+  <li>###NOREDIRECT###     - if set, no redirect will be done</li>
+  <li>###STORAGE_PID###    - explicit enough I guess (if not : id of the page where user are stored)</li>
+  <li>###STATUS_HEADER###  - depends of the template</li>
+  <li>###STATUS_MESSAGE### - depends of the template</li>
+</ul>
+
+<h2>Wrap parts</h2>
+<ul>
+  <li>###HEADER_VALID###  - useful to define what to show/hide</li>
+  <li>###MESSAGE_VALID### - useful to define what to show/hide</li>
+  <li>###FORGOTP_VALID### - useful to define what to show/hide</li>
+  <li>###PERMALOGIN_VALID### - useful to define what to show/hide</li>
+</ul>
+
+<h2>felogin Language Markers (see pi/locallang.xlf)</h2>
+<ul>
+  <li>###EMAIL_LABEL###                 - corresponding to 'your_email'</li>
+  <li>###FORGOT_PASSWORD###             - corresponding to 'forgot_password'</li>
+  <li>###FORGOT_PASSWORD_BACKTOLOGIN### - corresponding to 'forgot_password_backToLogin'</li>
+  <li>###FORGOT_PASSWORD_ENTEREMAIL###  - corresponding to 'forgot_password_enterEmail'</li>
+  <li>###LOGIN_LABEL###                 - corresponding to 'login'</li>
+  <li>###PASSWORD_LABEL###              - corresponding to 'password'</li>
+  <li>###SEND_PASSWORD###               - corresponding to 'send_password'</li>
+  <li>###USERNAME_LABEL###              - corresponding to 'username'</li>
+</ul>
+
+<!--###TEMPLATE_LOGIN###-->
+<div class="container-fluid">
+  <div class="background-content-module clearfix">
+    <div class="background-content-holder clearfix has-bg has-bg-primary">
+      <div class="row large-gap-column-wrap element element-gap-normal">
+        <div class="col-md-12 my-col element element-gap-normal">
+          <div class="entry clearfix">
+            <h4>###STATUS_HEADER###</h4>
+            <p>###STATUS_MESSAGE###</p>
+            <br>
+          </div>
+          <div class="site-form-module clearfix element element-gap-normal login-form">
+            <form action="###ACTION_URI###" target="_top" method="post" onsubmit="###ON_SUBMIT###">
+              <!-- ###LOGIN_FORM### -->
+              <div class="site-form-row clearfix">
+                <div class="site-form-block col-2 col">
+                  <label class="site-form-label" for="user">###USERNAME_LABEL###</label>
+                  <div class="site-form-field"><input type="text" id="user" name="user" value="" class="site-form-input username" /></div>
+                </div>
+                <div class="site-form-block col-2 col">
+                  <label class="site-form-label" for="pass">###PASSWORD_LABEL###</label>
+                  <div class="site-form-field"><input type="password" id="pass" name="pass" value="" data-rsa-encryption="" class="site-form-input password" /></div>
+                </div>
+              </div>
+
+              <!--###PERMALOGIN_VALID###-->
+              <div class="site-form-row clearfix">
+                <div class="form-check-radio-block">
+                  <div class="check-radio-item">
+                    <input name="permalogin" value="1" type="checkbox" ###PERMALOGIN_CHECKBOX_ATTRIBUTES### id="permalogin"  onclick="document.getElementById('permaloginHiddenField').disabled = this.checked;" />
+                    <div class="clone-check"></div>
+                  </div>
+                  <div class="check-radio-label">###PERMALOGIN###</div>
+                  <input name="permalogin" value="0" type="hidden" ###PERMALOGIN_HIDDENFIELD_ATTRIBUTES### id="permaloginHiddenField" />
+                </div>
+              </div>
+              <!--###PERMALOGIN_VALID###-->
+
+              <div class="site-form-row clearfix site-submit-row">
+                <div class="site-form-block col-2 col">
+                  <div class="site-form-field">
+                    <input type="submit" name="submit" class="site-form-button page-button primary-color-button button-width-type-two login-button" value="###LOGIN_LABEL###" />
+                  </div>
+                </div>
+                <div class="site-form-block col-2 col">
+                  <!--###FORGOTP_VALID###-->
+                  <div class="entry clearfix">
+                    <div style="height:10px;"></div>
+                    <p><!--###FORGOT_PASSWORD_LINK###-->###FORGOT_PASSWORD###<!--###FORGOT_PASSWORD_LINK###--></p>
+                  </div>
+                  <!--###FORGOTP_VALID###-->
+                </div>
+              </div>
+
+              <div class="felogin-hidden">
+                <input type="hidden" name="logintype" value="login" />
+                <input type="hidden" name="pid" value="###STORAGE_PID###" />
+                <input type="hidden" name="redirect_url" value="###REDIRECT_URL###" />
+                <input type="hidden" name="###PREFIXID###[noredirect]" value="###NOREDIRECT###" />
+                ###EXTRA_HIDDEN###
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ###LOGIN_FORM### -->
+
+<!--###TEMPLATE_LOGIN###-->
+
+<!--###TEMPLATE_LOGOUT###-->
+<div class="container-fluid element element-gap-meium">
+  <div class="background-content-module clearfix">
+    <div class="background-content-holder clearfix has-bg has-bg-primary">
+      <div class="row large-gap-column-wrap element element-gap-normal">
+        <div class="col-md-12 my-col element element-gap-normal">
+          <div class="entry clearfix">
+            <h4>###STATUS_HEADER###</h4><span></span>
+          </div>
+          <div class="site-form-module clearfix">
+            <form action="###ACTION_URI###" target="_top" method="post">
+              <div class="site-form-row clearfix">
+                <div class="site-form-block full-block">
+                  <label class="site-form-label">###USERNAME_LABEL###</label> ###USERNAME###
+                </div>
+                </div>
+              <div class="site-form-row clearfix site-submit-row">
+                <div class="site-form-block full-block">
+                  <div class="site-form-field">
+                    <input type="submit" name="submit" value="###LOGOUT_LABEL###" class="site-form-button page-button primary-color-button button-width-type-two" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="felogin-hidden">
+                <input type="hidden" name="logintype" value="logout" />
+                <input type="hidden" name="pid" value="###STORAGE_PID###" />
+                <input type="hidden" name="###PREFIXID###[noredirect]" value="###NOREDIRECT###" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--###TEMPLATE_LOGOUT###-->
+
+<!--###TEMPLATE_FORGOT###-->
+<div class="container-fluid">
+  <div class="background-content-module clearfix">
+    <div class="background-content-holder clearfix has-bg has-bg-primary">
+      <div class="row large-gap-column-wrap element element-gap-normal">
+        <div class="col-md-12 my-col element element-gap-normal">
+          <div class="entry clearfix">
+            <h4>###STATUS_HEADER###</h4>
+            <p>###STATUS_MESSAGE###</p>
+            <h5 class="no-bottom-margin">###LEGEND###</h5>
+            <br>
+          </div>
+          <div class="site-form-module clearfix element element-gap-normal">
+            <!-- ###FORGOT_FORM### -->
+            <form action="###ACTION_URI###" method="post">
+              <div class="site-form-row clearfix">
+                <div class="site-form-block full-block">
+                  <label for="tx_felogin_pi1-forgot-email" class="site-form-label">###DATA_LABEL###</label>
+                  <div class="site-form-field"><input type="text" name="###FORGOT_EMAIL###" id="tx_felogin_pi1-forgot-email" class="site-form-input" /></div>
+                </div>
+              </div>
+              <div class="site-form-row clearfix site-submit-row">
+                <div class="site-form-block full-block">
+                  <div class="site-form-field">
+                    <input type="submit" name="submit" value="###SEND_PASSWORD###" class="site-form-button page-button primary-color-button button-width-type-two" />
+                  </div>
+                </div>
+               </div>
+               <div class="felogin-hidden">
+                <input type="hidden" name="tx_felogin_pi1[forgot_hash]" value="###FORGOTHASH###" />
+              </div>
+            </form>
+            <!-- ###FORGOT_FORM### -->
+          </div>
+          <div class="entry clearfix element element-gap-normal">
+            <p>###BACKLINK_LOGIN###&nbsp;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--###TEMPLATE_FORGOT###-->
+
+<!--###TEMPLATE_CHANGEPASSWORD###-->
+<div class="container-fluid">
+  <div class="background-content-module clearfix">
+    <div class="background-content-holder clearfix has-bg has-bg-primary">
+      <div class="row large-gap-column-wrap element element-gap-normal">
+        <div class="col-md-12 my-col element element-gap-normal">
+          <div class="entry clearfix">
+            <h4>###STATUS_HEADER###</h4>
+            <p>###STATUS_MESSAGE###</p>
+            <br>
+          </div>
+          <div class="site-form-module clearfix element element-gap-normal">
+            <!-- ###CHANGEPASSWORD_FORM### -->
+            <form action="###ACTION_URI###" method="post">
+              <div class="site-form-row clearfix">
+                <div class="site-form-block col-1 col">
+                  <label for="tx_felogin_pi1-newpassword1" class="site-form-label">###NEWPASSWORD1_LABEL###</label>
+                  <div class="site-form-field"><input type="password" name="###NEWPASSWORD1###" id="tx_felogin_pi1-newpassword1" class="site-form-input" /></div>
+                </div>
+                <div class="site-form-block col-1 col">
+                  <label for="tx_felogin_pi1-newpassword2" class="site-form-label">###NEWPASSWORD2_LABEL###</label>
+                  <div class="site-form-field"><input type="password" name="###NEWPASSWORD2###" id="tx_felogin_pi1-newpassword2" class="site-form-input" /></div>
+                </div>
+              </div>
+              <div class="site-form-row clearfix site-submit-row">
+                <div class="site-form-block full-block">
+                  <div class="site-form-field">
+                    <input type="submit" name="tx_felogin_pi1[changepasswordsubmit]" value="###SEND_PASSWORD###" class="site-form-button page-button primary-color-button button-width-type-two" />
+                  </div>
+               </div>
+            </form>
+          </div>
+          <!-- ###CHANGEPASSWORD_FORM### -->
+          <div class="entry clearfix element element-gap-normal">
+            <p>###BACKLINK_LOGIN###</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--###TEMPLATE_CHANGEPASSWORD###-->

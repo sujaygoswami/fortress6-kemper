@@ -1,0 +1,37 @@
+// defining backend layout for search detail page
+mod {
+	web_layout {
+		BackendLayouts {
+
+			search {
+				title = Search Detail Template
+				description = Website Search Detail BE template
+				config {
+					backend_layout {
+						colCount = 1
+						rowCount = 2
+						rows {
+							1 {
+								columns {
+									1 {
+										name = Search Extension
+										colPos = 0
+									}
+								}
+							}
+							2 {
+								columns {
+									1 {
+										name = Extra Content
+										colPos = 1
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+	}
+}

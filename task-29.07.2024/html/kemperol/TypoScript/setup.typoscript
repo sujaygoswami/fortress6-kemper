@@ -1,0 +1,7 @@
+#### BASIC ####
+<INCLUDE_TYPOSCRIPT: source="DIR:fileadmin/templates/kemperol/TypoScript/base/" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:fileadmin/templates/kemperol/TypoScript/page/" extensions="typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:fileadmin/templates/kemperol/TypoScript/libs/" extensions="typoscript">
+
+#### EXTENSION ####
+<INCLUDE_TYPOSCRIPT: source="DIR:fileadmin/templates/kemperol/TypoScript/plugins/" extensions="typoscript">

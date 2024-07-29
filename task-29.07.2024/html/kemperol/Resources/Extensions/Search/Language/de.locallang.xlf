@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file t3:id="1415814838" source-language="de" datatype="plaintext" original="messages" date="2011-12-18T10:19:20Z" product-name="indexed_search">
+		<header/>
+		<body>
+			<trans-unit id="localizedOperandAnd">
+				<source>AND</source>
+				<target>UND</target>
+			</trans-unit>
+			<trans-unit id="localizedOperandOr">
+				<source>OR</source>
+				<target>ODER</target>
+			</trans-unit>
+			<trans-unit id="localizedOperandNot">
+				<source>NOT</source>
+				<target>NICHT</target>
+			</trans-unit>
+
+			<trans-unit id="rules.headline">
+				<source>Rules</source>
+				<target>Regeln</target>
+			</trans-unit>
+			<trans-unit id="rules.text" xml:space="preserve">
+				<source><![CDATA[Only words with 2 or more characters are accepted<br />
+Max 200 chars total<br />
+Space is used to split words, "" can be used to search for a whole string (not indexed search then)<br />
+AND, OR and NOT are prefix words, overruling the default operator<br />
++/|/- equals AND, OR and NOT as operators.<br />
+All search words are converted to lowercase.
+]]></source>
+				<target><![CDATA[Nur Wörter mit 2 oder mehr Zeichen werden akzeptiert. <br />
+Max 200 Zeichen insgesamt<br />
+Leerzeichen werden verwendet, um Wörter zu trennen, "" kann verwendet werden, um nach einer ganzen Zeichenfolge zu suchen (nicht indexierte Suche). <br />
+AND, OR und NOT sind Präfixwörter, die den Standardoperator <br /> außer Kraft setzen
++/|/- entspricht UND, ODER und NICHT als Operatoren. <br />
+Alle Suchbegriffe werden in Kleinbuchstaben umgewandelt.
+]]></target>
+			</trans-unit>
+
+			<trans-unit id="form.legend">
+				<source>Search form</source>
+				<target>Suchformular</target>
+			</trans-unit>
+			<trans-unit id="form.searchFor">
+				<source>Search for</source>
+				<target>Suchen nach</target>
+			</trans-unit>
+			<trans-unit id="form.placeholder">
+				<source>Search</source>
+				<target>Suche</target>
+			</trans-unit>
+			<trans-unit id="form.extResume">
+				<source>Extended resume</source>
+				<target>Erweiterter Lebenslauf</target>
+			</trans-unit>
+			<trans-unit id="form.atATime">
+				<source>at a time</source>
+				<target>zu einer Zeit</target>
+			</trans-unit>
+			<trans-unit id="form.orderBy">
+				<source>Order by</source>
+				<target>Sortieren nach</target>
+			</trans-unit>
+			<trans-unit id="form.fromSection">
+				<source>From section</source>
+				<target>Von Abschnitt</target>
+			</trans-unit>
+			<trans-unit id="form.freeIndexUid">
+				<source>Category</source>
+				<target>Kategorie</target>
+			</trans-unit>
+			<trans-unit id="form.searchIn">
+				<source>Search in</source>
+				<target>Suchen in</target>
+			</trans-unit>
+			<trans-unit id="form.match">
+				<source>Match</source>
+				<target>Spiel</target>
+			</trans-unit>
+			<trans-unit id="form.style">
+				<source>Style</source>
+				<target>Stil</target>
+			</trans-unit>
+			<trans-unit id="form.submit">
+				<source>Search</source>
+				<target>Suchen</target>
+			</trans-unit>
+			<trans-unit id="form.addToSearch">
+				<source>Add to current search words</source>
+				<target>Zu aktuellen Suchbegriffen hinzufügen</target>
+			</trans-unit>
+
+			<trans-unit id="form.linkToRegularSearch">
+				<source>Regular search</source>
+				<target>Reguläre Suche</target>
+			</trans-unit>
+			<trans-unit id="form.linkToAdvancedSearch">
+				<source>Advanced search</source>
+				<target>Erweiterte Suche</target>
+			</trans-unit>
+
+
+			<trans-unit id="searchTypes.0">
+				<source>Distinct word</source>
+				<target>Eindeutiges Wort</target>
+			</trans-unit>
+			<trans-unit id="searchTypes.1">
+				<source>Part of word</source>
+				<target>Teil des Wortes</target>
+			</trans-unit>
+			<trans-unit id="searchTypes.2">
+				<source>First part of word</source>
+				<target>Erster Teil des Wortes</target>
+			</trans-unit>
+			<trans-unit id="searchTypes.3">
+				<source>Last part of word</source>
+				<target>Letzter Teil des Wortes</target>
+			</trans-unit>
+			<trans-unit id="searchTypes.10">
+				<source>Sounds like</source>
+				<target>Hört sich an wie</target>
+			</trans-unit>
+			<trans-unit id="searchTypes.20">
+				<source>Sentence</source>
+				<target>Satz</target>
+			</trans-unit>
+
+			<trans-unit id="defaultOperands.0">
+				<source>All words (AND)</source>
+				<target>Alle Wörter (UND)</target>
+			</trans-unit>
+			<trans-unit id="defaultOperands.1">
+				<source>Any words (OR)</source>
+				<target>Irgendwelche Wörter (ODER)</target>
+			</trans-unit>
+
+			<trans-unit id="languageUids.-1">
+				<source>All languages</source>
+				<target>Alle Sprachen</target>
+			</trans-unit>
+			<trans-unit id="languageUids.0">
+				<source>Default</source>
+				<target>Standard</target>
+			</trans-unit>
+
+			<trans-unit id="sections.0">
+				<source>Whole site</source>
+				<target>Ganze Seite</target>
+			</trans-unit>
+			<trans-unit id="sections.-1">
+				<source>Only this page</source>
+				<target>Nur diese Seite</target>
+			</trans-unit>
+			<trans-unit id="sections.-2">
+				<source>Top + level 1</source>
+				<target>Top + Level 1</target>
+			</trans-unit>
+			<trans-unit id="sections.-3">
+				<source>Level 2 and out</source>
+				<target>Level 2 und aus</target>
+			</trans-unit>
+			<trans-unit id="sections.rootLevel1">
+				<source>Level 1:</source>
+				<target>Level 1:</target>
+			</trans-unit>
+			<trans-unit id="sections.rootLevel1All">
+				<source>All pages on level 1</source>
+				<target>Alle Seiten auf Level 1</target>
+			</trans-unit>
+			<trans-unit id="sections.rootLevel2">
+				<source>- Level 2:</source>
+				<target>- Level 2:</target>
+			</trans-unit>
+			<trans-unit id="sections.rootLevel2All">
+				<source>- All pages on level 2</source>
+				<target>- Alle Seiten auf Level 2</target>
+			</trans-unit>
+
+			<trans-unit id="mediaTypes.0">
+				<source>Internal pages</source>
+				<target>Interne Seiten</target>
+			</trans-unit>
+			<trans-unit id="mediaTypes.-1">
+				<source>All media</source>
+				<target>Alle Medien</target>
+			</trans-unit>
+			<trans-unit id="mediaTypes.-2">
+				<source>All External</source>
+				<target>Alle extern</target>
+			</trans-unit>
+
+			<trans-unit id="indexingConfigurations.-1">
+				<source>All, mixed</source>
+				<target>Alles gemischt</target>
+			</trans-unit>
+			<trans-unit id="indexingConfigurations.-2">
+				<source>All, categorized</source>
+				<target>Alle, kategorisiert</target>
+			</trans-unit>
+			<trans-unit id="indexingConfigurations.0">
+				<source>Pages</source>
+				<target>Seiten</target>
+			</trans-unit>
+
+			<trans-unit id="indexingConfigurationHeader.-1">
+				<source>Mixed categories</source>
+				<target>Gemischte Kategorien</target>
+			</trans-unit>
+			<trans-unit id="indexingConfigurationHeader.0">
+				<source>Website Pages</source>
+				<target>Webseiten Seiten</target>
+			</trans-unit>
+
+			<trans-unit id="sortOrders.rank_flag">
+				<source>Weight/Frequency</source>
+				<target>Gewicht / Häufigkeit</target>
+			</trans-unit>
+			<trans-unit id="sortOrders.rank_freq">
+				<source>Frequency</source>
+				<target>Frequenz</target>
+			</trans-unit>
+			<trans-unit id="sortOrders.rank_first">
+				<source>Close to top</source>
+				<target>Ganz oben</target>
+			</trans-unit>
+			<trans-unit id="sortOrders.rank_count">
+				<source>Number of words</source>
+				<target>Anzahl der Wörter</target>
+			</trans-unit>
+			<trans-unit id="sortOrders.mtime">
+				<source>Date Modified</source>
+				<target>Datum geändert</target>
+			</trans-unit>
+			<trans-unit id="sortOrders.title">
+				<source>Document title</source>
+				<target>Dokumenttitel</target>
+			</trans-unit>
+			<trans-unit id="sortOrders.crdate">
+				<source>Creation date</source>
+				<target>Erstellungsdatum</target>
+			</trans-unit>
+
+			<trans-unit id="sortOrders.descending">
+				<source>Highest first</source>
+				<target>Höchster zuerst</target>
+			</trans-unit>
+			<trans-unit id="sortOrders.ascending">
+				<source>Lowest first</source>
+				<target>Niedrigste zuerst</target>
+			</trans-unit>
+
+			<trans-unit id="groupBy.sections">
+				<source>Section hierarchy</source>
+				<target>Abschnittshierarchie</target>
+			</trans-unit>
+			<trans-unit id="groupBy.flat">
+				<source>Flat list</source>
+				<target>Flache Liste</target>
+			</trans-unit>
+
+			<trans-unit id="result.page">
+				<source>page</source>
+				<target>Seite</target>
+			</trans-unit>
+			<trans-unit id="result.pages">
+				<source>pages</source>
+				<target>Seiten</target>
+			</trans-unit>
+			<trans-unit id="result.unnamedSection">
+				<source>Other</source>
+				<target>Andere</target>
+			</trans-unit>
+			<trans-unit id="result.otherMatching">
+				<source>Other matching pages in the same document:</source>
+				<target>Weitere übereinstimmende Seiten im selben Dokument:</target>
+			</trans-unit>
+			<trans-unit id="result.otherPageAsWell">
+				<source>INFO: There was another page indexed as well. Probably indexed with another or no usergroup.</source>
+				<target>INFO: Es wurde auch eine andere Seite indexiert. Wahrscheinlich mit einer anderen oder keiner Benutzergruppe indexiert.</target>
+			</trans-unit>
+			<trans-unit id="result.path">
+				<source>Path:</source>
+				<target>Pfad:</target>
+			</trans-unit>
+			<trans-unit id="result.modified">
+				<source>Modified:</source>
+				<target>Geändert:</target>
+			</trans-unit>
+			<trans-unit id="result.created">
+				<source>Created:</source>
+				<target>Erstellt:</target>
+			</trans-unit>
+			<trans-unit id="result.size">
+				<source>Size:</source>
+				<target>Größe:</target>
+			</trans-unit>
+			<trans-unit id="result.noResume">
+				<source>Note: This search hit may not accurately match the content on this page. The page resume cannot be shown.</source>
+				<target>Hinweis: Dieser Suchtreffer stimmt möglicherweise nicht genau mit dem Inhalt dieser Seite überein. Die Seitenzusammenfassung kann nicht angezeigt werden.</target>
+			</trans-unit>
+			<trans-unit id="result.memberGroups">
+				<source>Require membership of group numbers %s</source>
+				<target>Erfordern Mitgliedschaft von Gruppennummern %s</target>
+			</trans-unit>
+
+			<trans-unit id="result.ratingMatches">
+				<source>matches</source>
+				<target>streichhölzer</target>
+			</trans-unit>
+			<trans-unit id="result.noResult">
+				<source>No results found.</source>
+				<target>Keine Ergebnisse gefunden.</target>
+			</trans-unit>
+			<trans-unit id="result.inSection">
+				<source>in the section</source>
+				<target>im Bereich</target>
+			</trans-unit>
+			<trans-unit id="result.inNsection">
+				<source>in %s section:</source>
+				<target>in %s Abschnitt:</target>
+			</trans-unit>
+			<trans-unit id="result.inNsections">
+				<source>in %s sections:</source>
+				<target>in %s Abschnitte:</target>
+			</trans-unit>
+
+			<trans-unit id="searchFor">
+				<source>Search for</source>
+				<target>Suchen nach</target>
+			</trans-unit>
+			<trans-unit id="searchFor.or">
+				<source>or</source>
+				<target>oder</target>
+			</trans-unit>
+			<trans-unit id="searchFor.and">
+				<source>and</source>
+				<target>und</target>
+			</trans-unit>
+			<trans-unit id="searchFor.andnot">
+				<source>but not</source>
+				<target>aber nicht</target>
+			</trans-unit>
+
+			<trans-unit id="displayResults.previous">
+				<source>&lt; Previous</source>
+				<target>&lt; Bisherige</target>
+			</trans-unit>
+			<trans-unit id="displayResults.page">
+				<source>Page</source>
+				<target>Seite</target>
+			</trans-unit>
+			<trans-unit id="displayResults.next">
+				<source>Next &gt;</source>
+				<target>Nächster &gt;</target>
+			</trans-unit>
+			<trans-unit id="displayResults">
+				<source><![CDATA[Displaying results <strong>%1$s to %2$s</strong> out of <strong>%3$s</strong>]]></source>
+				<target><![CDATA[Anzeige der Ergebnisse <strong>%1$s bis %2$s</strong> von <strong>%3$s</strong>]]></target>
+			</trans-unit>
+			<trans-unit id="administration.menu.general">
+				<source>General statistics</source>
+				<target>Allgemeine Statistiken</target>
+			</trans-unit>
+			<trans-unit id="administration.menu.pages">
+				<source>List: Pages</source>
+				<target>Liste: Seiten</target>
+			</trans-unit>
+			<trans-unit id="administration.menu.externalDocuments">
+				<source>List: External documents</source>
+				<target>Liste: Externe Dokumente</target>
+			</trans-unit>
+			<trans-unit id="administration.menu.searchStatistic">
+				<source>Search statistics</source>
+				<target>Suchstatistiken</target>
+			</trans-unit>
+			<trans-unit id="administration.menu.statistic">
+				<source>Detailed statistics</source>
+				<target>Detaillierte Statistiken</target>
+			</trans-unit>
+			<trans-unit id="administration.index.description">
+				<source>General statistics</source>
+				<target>Allgemeine Statistiken</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics">
+				<source>Indexing Engine Statistics</source>
+				<target>Indizierung von Engine-Statistiken</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.header">
+				<source>Row count by database table</source>
+				<target>Zeilenanzahl nach Datenbanktabelle</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.name">
+				<source>Name</source>
+				<target>Namen</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.count">
+				<source>Count</source>
+				<target>Anzahl</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.headerTypes">
+				<source>Hash Header Types</source>
+				<target>Hash-Header-Typen</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.headerTypes.count">
+				<source>Count / Unique count</source>
+				<target>Anzahl / Eindeutige Anzahl</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.word">
+				<source>Word</source>
+				<target>Wort</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.mostSearched.title">
+				<source>List of most searched words</source>
+				<target>Liste der meistgesuchten Wörter</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.mostSearched.description">
+				<source>Statistics for all pages. Select a page with indexed search form to see several statistics.</source>
+				<target>Statistiken für alle Seiten Wählen Sie eine Seite mit indiziertem Suchformular aus, um mehrere Statistiken anzuzeigen.</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.mostSearched.all">
+				<source>All</source>
+				<target>Alle</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.mostSearched.last30days">
+				<source>Last 30 days</source>
+				<target>Letzte 30 Tage</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.mostSearched.last24hours">
+				<source>Last 24 hours</source>
+				<target>Letzte 24 Tage</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.noResult">
+				<source>No result found</source>
+				<target>Keine Einträge gefunden</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.noResultForPage">
+				<source>No result for the selected page found.</source>
+				<target>Kein Ergebnis für die ausgewählte Seite gefunden.</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.selectPage">
+				<source>Please select a page in the page tree.</source>
+				<target>Bitte wählen Sie eine Seite im Seitenbaum.</target>
+			</trans-unit>
+			<trans-unit id="administration.external.title">
+				<source>External documents</source>
+				<target>Externe Dokumente</target>
+			</trans-unit>
+			<trans-unit id="field.fileName">
+				<source>Filename</source>
+				<target>Dateiname</target>
+			</trans-unit>
+			<trans-unit id="field.fileSize">
+				<source>Filesize</source>
+				<target>Dateigröße</target>
+			</trans-unit>
+			<trans-unit id="field.wordCount">
+				<source>Word count</source>
+				<target>Wortzahl</target>
+			</trans-unit>
+			<trans-unit id="field.words">
+				<source>Words</source>
+				<target>Wörter</target>
+			</trans-unit>
+			<trans-unit id="field.mtime">
+				<source>Modification time</source>
+				<target>Änderungszeit</target>
+			</trans-unit>
+			<trans-unit id="field.indexed">
+				<source>Indexed</source>
+				<target>Indiziert</target>
+			</trans-unit>
+			<trans-unit id="field.updated">
+				<source>Updated</source>
+				<target>Aktualisiert</target>
+			</trans-unit>
+			<trans-unit id="field.parseTime">
+				<source>Parsetime [ms]</source>
+				<target>Sendezeit [ms]</target>
+			</trans-unit>
+			<trans-unit id="field.groups">
+				<source>#sec/gr/full</source>
+				<target>#sek/gr/voll</target>
+			</trans-unit>
+			<trans-unit id="field.sub">
+				<source>Sub</source>
+				<target>Sub</target>
+			</trans-unit>
+			<trans-unit id="field.cHash">
+				<source>Chash</source>
+				<target>Vorsicht</target>
+			</trans-unit>
+			<trans-unit id="field.count">
+				<source>Count</source>
+				<target>Anzahl</target>
+			</trans-unit>
+			<trans-unit id="field.first">
+				<source>First</source>
+				<target>Zuerst</target>
+			</trans-unit>
+			<trans-unit id="field.pHash">
+				<source>PageHash</source>
+				<target>PageHash</target>
+			</trans-unit>
+			<trans-unit id="field.path">
+				<source>Path</source>
+				<target>Pfad</target>
+			</trans-unit>
+			<trans-unit id="field.id">
+				<source>Page Id</source>
+				<target>Seiten-ID</target>
+			</trans-unit>
+			<trans-unit id="field.uniqueId">
+				<source>Unique Id</source>
+				<target>Eindeutige ID</target>
+			</trans-unit>
+			<trans-unit id="field.type">
+				<source>Type</source>
+				<target>Art</target>
+			</trans-unit>
+			<trans-unit id="field.title">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="field.language">
+				<source>Language</source>
+				<target>Sprache</target>
+			</trans-unit>
+			<trans-unit id="field.frequency">
+				<source>Frequency</source>
+				<target>Frequenz</target>
+			</trans-unit>
+			<trans-unit id="field.flag">
+				<source>Flag</source>
+				<target>Flagge</target>
+			</trans-unit>
+			<trans-unit id="field.metaphone">
+				<source>Metaphone</source>
+				<target>Metaphon</target>
+			</trans-unit>
+			<trans-unit id="field.content">
+				<source>Content</source>
+				<target>Inhalt</target>
+			</trans-unit>
+			<trans-unit id="administration.notIndexed">
+				<source>Not indexed?</source>
+				<target>Nicht indexiert?</target>
+			</trans-unit>
+
+			<trans-unit id="administration.document.description">
+				<source>Details for a single result row</source>
+				<target>Details für eine einzelne Ergebniszeile</target>
+			</trans-unit>
+			<trans-unit id="administration.document.words">
+				<source>All words found on page</source>
+				<target>Alle Wörter auf der Seite gefunden</target>
+			</trans-unit>
+			<trans-unit id="administration.document.topCount">
+				<source>Words by top count</source>
+				<target>Wörter nach oben zählen</target>
+			</trans-unit>
+			<trans-unit id="administration.document.topFrequency">
+				<source>Words by frequency</source>
+				<target>Wörter nach Häufigkeit</target>
+			</trans-unit>
+			<trans-unit id="administration.stopWords">
+				<source>Stopwords</source>
+				<target>Stoppwörter</target>
+			</trans-unit>
+			<trans-unit id="administration.stopWords.save">
+				<source>Save stopwords</source>
+				<target>Speichern Sie Stoppwörter</target>
+			</trans-unit>
+			<trans-unit id="administration.keywords">
+				<source>Page keywords</source>
+				<target>Seitenschlüsselwörter</target>
+			</trans-unit>
+			<trans-unit id="administration.keywords.current">
+				<source>Current page keywords</source>
+				<target>Aktuelle Seitenschlüsselwörter</target>
+			</trans-unit>
+			<trans-unit id="administration.stopWordsKeywords.save">
+				<source>Save keywords and stop words</source>
+				<target>Speichere Schlüsselwörter und halte Wörter an</target>
+			</trans-unit>
+			<trans-unit id="administration.word.description">
+				<source>Detail view of a single word</source>
+				<target>Detailansicht eines einzelnen Wortes</target>
+			</trans-unit>
+			<trans-unit id="administration.linkBack">
+				<source>Back</source>
+				<target>Zurück</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.sectionRecords">
+				<source>Section records for this phash</source>
+				<target>Abschnittsdatensätze für diesen Phash</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.debug">
+				<source>Debug</source>
+				<target>Debuggen</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.lexer">
+				<source>Lexer</source>
+				<target>Lexer</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.metaphone">
+				<source>Metaphone</source>
+				<target>Metaphon</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.view.overview">
+				<source>Overview</source>
+				<target>Überblick</target>
+			</trans-unit>
+			<trans-unit id="administration.statistics.view.content">
+				<source>Words and content</source>
+				<target>Wörter und Inhalt</target>
+			</trans-unit>
+			<trans-unit id="administration.phash.tableHeader">
+				<source>Phash row content</source>
+				<target>Zeileninhalt peilen</target>
+			</trans-unit>
+			<trans-unit id="administration.removeEntry">
+				<source>Remove entry</source>
+				<target>Eintrag entfernen</target>
+			</trans-unit>
+			<trans-unit id="administration.removeAllEntries">
+				<source>Remove all listed entries</source>
+				<target>Entfernen Sie alle aufgelisteten Einträge</target>
+			</trans-unit>
+			<trans-unit id="administration.back">
+				<source>Back</source>
+				<target>Zurück</target>
+			</trans-unit>
+			<trans-unit id="administration.noPageSelected">
+				<source>Please select a page from the page tree.</source>
+				<target>Bitte wählen Sie eine Seite aus dem Seitenbaum.</target>
+			</trans-unit>
+			<trans-unit id="error.noTypoScript">
+				<source>Error: Please check that TypoScript for the Indexed Search plugin is included.</source>
+				<target>Fehler: Bitte prüfen Sie, ob TypoScript für das Indexed Search Plugin enthalten ist.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
