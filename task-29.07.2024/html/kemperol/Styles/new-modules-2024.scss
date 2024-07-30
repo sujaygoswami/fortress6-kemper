@@ -23,6 +23,10 @@
         color: var(--site-primary);
     }
 
+    .this-element-gap-small{
+        margin-bottom: 25px;
+    }
+
     .this-element-gap-normal{
         margin-bottom: 55px;
     }
@@ -33,14 +37,121 @@
 }
 
 // step-form-module
+.default-custom-select-menu-step-form{
+    .ui-widget-content{
+        background-color: white;
+
+        .ui-menu-item{
+            padding: 0px;
+
+            .ui-menu-item-wrapper{
+                padding: 10px 20px;
+            }
+        }
+    }
+}
 .step-form-module{
     color: var(--site-primary);
+    .site-form-module{
+        .site-form-row{
+            margin-top: 10px;
+        }
+        .site-form-field{
+            border: none;
+
+            &.select-field{
+                .ui-selectmenu-text{
+                    font-family: "HelveticaNeue-bold";
+                }
+                .ui-widget-content{
+                    background-color: white;
+                }
+                .ui-selectmenu-button{
+                    background-color: white;
+                    padding: 12px 20px;
+                }
+                &::after{
+                    background-color: white;
+                }
+            }
+        }
+    }
     .iconic-box-choice-module{
         display: flex;
         column-gap: 20px;
         row-gap: 20px;
         text-align: center;
         flex-wrap: wrap;
+
+        .multi-item-action-dasabled{
+
+            &.not-selectable{
+                pointer-events: none;
+                .the-choice-box{
+                border: 1px solid white;
+                & > .main-wrap{
+                    background-color: transparent;
+
+                    .the-title{
+                        color: var(--site-primary-light-2);
+                    }
+                }
+            }
+            }
+
+            
+           
+                .site-form-module{
+                    pointer-events: none;
+                    .site-form-field{
+                        &.select-field{
+                            .ui-selectmenu-text{
+                                color: var(--site-primary-light-2) !important;
+                            }
+                            &:after{
+                                background-color: transparent;
+                                background-image: url(../Images/bottom-direction-primary-color-light-2-arrow.svg);
+                            }
+                            .ui-selectmenu-button{
+                                background-color: transparent;
+                                border: 1px solid white;
+                            }
+                        }
+                    }
+                }
+           
+        }
+
+        &.view-2{
+            text-align: left;
+            .the-title{
+                font-family: "HelveticaNeue-light";
+
+                strong{
+                    font-family: "HelveticaNeue-bold";
+                }
+            }
+            .choice-or-box{
+                width: 20%;
+                text-align: center;
+                font-size: 24px;
+                font-family: "HelveticaNeue-bold";
+                line-height: 110px;
+            }
+            .choice-box-multi-item-holder{
+                width: 38%;
+            }
+            .the-choice-box{
+                height: 110px;
+                width: 100%;
+
+                & > .main-wrap{
+                    display: flex;
+                    padding: 0 25px;
+                    column-gap: 25px;
+                }
+            }
+        }
 
         .the-icon{
             img{
@@ -58,7 +169,7 @@
             font-family: "HelveticaNeue-bold";
         }
 
-        & > .the-choice-box{
+        .the-choice-box{
             width: 18.4%;
             border-radius: 15px;
             height: 110px;
@@ -112,6 +223,10 @@
         }
     }
 
+    .form-step-ahead-module{
+        margin-left: auto;
+    }
+
     .step-pagination-module{
         ul{
             list-style: none;
@@ -122,6 +237,32 @@
             row-gap: 5px;
 
             li{
+                margin: 0px;
+                padding: 0px;
+
+                &.not-pagi{
+                    &.disabled{
+
+                        .page-button{
+                            background-color: rgba($color: #ffffff, $alpha: 0.6);
+                            pointer-events: none;
+
+                            &.primary-colored-button{
+                                &:after{
+                                    background-image: url(../Images/next-direction-primary-color-light-2-arrow.svg);
+                                }
+                            }
+
+                            span{
+                                color: var(--site-primary-light-2) !important;
+                            }
+                        }
+                        
+                    }
+                }
+            }
+
+            li:not(.not-pagi){
                 min-width: 40px;
                 height: 40px;
                 font-size: 16px;

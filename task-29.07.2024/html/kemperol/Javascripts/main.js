@@ -196,6 +196,9 @@ jQuery(document).ready(function() {
     });
 
 
+    
+
+
 
     jQuery('.pcart-color-varient .color-choice a').each(function() {
 
@@ -956,6 +959,29 @@ jQuery(document).ready(function() {
 
     //     $('.result').html("id : " + userid + ", name : " + username);
     // });
+
+
+
+
+    // step form module July 2024
+    jQuery('.default-custom-select-step-form select').selectmenu({
+        create: function() {
+            var UIwidth = jQuery(this).parent().width();
+            jQuery('div.ui-selectmenu-menu').addClass('custom-animated-nav default-custom-select-menu-step-form').width(UIwidth);
+        }
+    });
+
+    jQuery('.iconic-box-choice-module').each(function(){
+        var THISMAINMODULE = jQuery(this);
+        jQuery(this).find('.choice-selection-input').click(function(){
+            if($(this).is(':checked')) {
+                (THISMAINMODULE).find('.choice-box-multi-item-holder').addClass('multi-item-action-dasabled');
+                jQuery(this).parents('.choice-box-multi-item-holder').removeClass('multi-item-action-dasabled');
+            }
+        });
+    });    
+
+    
 
 });
 
