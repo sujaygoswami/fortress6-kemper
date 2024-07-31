@@ -11,6 +11,10 @@
   padding-bottom: 15px;
   border-bottom: 1px solid white;
 }
+.new-modules-2024 .this-module-header.no-border {
+  padding-bottom: 0px;
+  border: none;
+}
 .new-modules-2024 .this-pad-box-default {
   padding: 50px;
 }
@@ -55,6 +59,7 @@
 .step-form-module .site-form-module .site-form-field.select-field .ui-selectmenu-button {
   background-color: white;
   padding: 12px 20px;
+  border: 1px solid transparent;
 }
 .step-form-module .site-form-module .site-form-field.select-field::after {
   background-color: white;
@@ -70,31 +75,33 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.step-form-module .iconic-box-choice-module .multi-item-action-dasabled.not-selectable {
+.step-form-module .iconic-box-choice-module .the-choice-box.not-selectable {
   pointer-events: none;
-}
-.step-form-module .iconic-box-choice-module .multi-item-action-dasabled.not-selectable .the-choice-box {
   border: 1px solid white;
 }
-.step-form-module .iconic-box-choice-module .multi-item-action-dasabled.not-selectable .the-choice-box > .main-wrap {
+.step-form-module .iconic-box-choice-module .the-choice-box.not-selectable > .main-wrap {
   background-color: transparent;
-}
-.step-form-module .iconic-box-choice-module .multi-item-action-dasabled.not-selectable .the-choice-box > .main-wrap .the-title {
-  color: var(--site-primary-light-2);
+  opacity: 0.6;
 }
 .step-form-module .iconic-box-choice-module .multi-item-action-dasabled .site-form-module {
   pointer-events: none;
 }
 .step-form-module .iconic-box-choice-module .multi-item-action-dasabled .site-form-module .site-form-field.select-field .ui-selectmenu-text {
-  color: var(--site-primary-light-2) !important;
+  opacity: 0.6;
 }
 .step-form-module .iconic-box-choice-module .multi-item-action-dasabled .site-form-module .site-form-field.select-field:after {
   background-color: transparent;
-  background-image: url(../Images/bottom-direction-primary-color-light-2-arrow.svg);
+  opacity: 0.6;
 }
 .step-form-module .iconic-box-choice-module .multi-item-action-dasabled .site-form-module .site-form-field.select-field .ui-selectmenu-button {
   background-color: transparent;
-  border: 1px solid white;
+  border-color: white;
+}
+.step-form-module .iconic-box-choice-module .multi-choice-box-holder .the-choice-box {
+  margin-top: 10px;
+}
+.step-form-module .iconic-box-choice-module .multi-choice-box-holder .the-choice-box:first-child {
+  margin-top: 0px;
 }
 .step-form-module .iconic-box-choice-module.view-2 {
   text-align: left;
@@ -126,6 +133,24 @@
   padding: 0 25px;
   -webkit-column-gap: 25px;
           column-gap: 25px;
+}
+.step-form-module .iconic-box-choice-module.view-2.narrow-view .col-3 {
+  width: 32%;
+}
+.step-form-module .iconic-box-choice-module.view-2.narrow-view .the-choice-box {
+  height: 40px;
+}
+.step-form-module .iconic-box-choice-module.view-2.narrow-view .the-choice-box > .main-wrap {
+  padding: 0 15px;
+  -webkit-column-gap: 0px;
+          column-gap: 0px;
+}
+.step-form-module .iconic-box-choice-module.view-2.narrow-view .the-choice-box > .main-wrap .the-icon {
+  width: 45px;
+}
+.step-form-module .iconic-box-choice-module.view-2.narrow-view .the-choice-box > .main-wrap .the-icon img {
+  max-width: 35px;
+  height: auto;
 }
 .step-form-module .iconic-box-choice-module .the-icon img {
   height: 80px;
@@ -202,14 +227,15 @@
   padding: 0px;
 }
 .step-form-module .step-pagination-module ul li.not-pagi.disabled .page-button {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: white;
   pointer-events: none;
+  opacity: 0.6;
 }
 .step-form-module .step-pagination-module ul li.not-pagi.disabled .page-button.primary-colored-button:after {
-  background-image: url(../Images/next-direction-primary-color-light-2-arrow.svg);
+  background-image: url(../Images/next-direction-primary-color-arrow.svg);
 }
 .step-form-module .step-pagination-module ul li.not-pagi.disabled .page-button span {
-  color: var(--site-primary-light-2) !important;
+  color: var(--site-primary) !important;
 }
 .step-form-module .step-pagination-module ul li:not(.not-pagi) {
   min-width: 40px;
@@ -224,6 +250,7 @@
 }
 .step-form-module .step-pagination-module ul li:not(.not-pagi).disabled {
   pointer-events: none;
-  background-color: rgba(255, 255, 255, 0.6);
-  color: var(--site-primary-light-2);
+  background-color: white;
+  color: var(--site-primary);
+  opacity: 0.6;
 }

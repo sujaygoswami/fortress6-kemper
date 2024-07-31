@@ -13,6 +13,11 @@
     .this-module-header{
         padding-bottom: 15px;
         border-bottom: 1px solid white;
+
+        &.no-border{
+            padding-bottom: 0px;
+            border: none;
+        }
     }
 
     .this-pad-box-default{
@@ -69,6 +74,7 @@
                 .ui-selectmenu-button{
                     background-color: white;
                     padding: 12px 20px;
+                    border: 1px solid transparent;
                 }
                 &::after{
                     background-color: white;
@@ -83,21 +89,23 @@
         text-align: center;
         flex-wrap: wrap;
 
-        .multi-item-action-dasabled{
+        
 
+        .the-choice-box{
             &.not-selectable{
                 pointer-events: none;
-                .the-choice-box{
                 border: 1px solid white;
+
                 & > .main-wrap{
                     background-color: transparent;
-
-                    .the-title{
-                        color: var(--site-primary-light-2);
-                    }
+                    opacity: 0.6;
                 }
             }
-            }
+        }
+
+        .multi-item-action-dasabled{
+
+            
 
             
            
@@ -106,20 +114,29 @@
                     .site-form-field{
                         &.select-field{
                             .ui-selectmenu-text{
-                                color: var(--site-primary-light-2) !important;
+                                opacity: 0.6;
                             }
                             &:after{
                                 background-color: transparent;
-                                background-image: url(../Images/bottom-direction-primary-color-light-2-arrow.svg);
+                                opacity: 0.6;
                             }
                             .ui-selectmenu-button{
                                 background-color: transparent;
-                                border: 1px solid white;
+                                border-color: white;
                             }
                         }
                     }
                 }
            
+        }
+
+        .multi-choice-box-holder{
+            .the-choice-box{
+                margin-top: 10px;
+                &:first-child{
+                    margin-top: 0px;
+                }
+            }
         }
 
         &.view-2{
@@ -149,6 +166,29 @@
                     display: flex;
                     padding: 0 25px;
                     column-gap: 25px;
+                }
+            }
+
+            &.narrow-view{
+                .col-3{
+                    width: 32%;
+                }
+                .the-choice-box{
+                    height: 40px;
+
+                    & > .main-wrap{
+                        padding: 0 15px;
+                        column-gap: 0px;
+
+                        .the-icon{
+                            width: 45px;
+
+                            img{
+                                max-width: 35px;
+                                height: auto;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -244,17 +284,18 @@
                     &.disabled{
 
                         .page-button{
-                            background-color: rgba($color: #ffffff, $alpha: 0.6);
+                            background-color: white;
                             pointer-events: none;
+                            opacity: 0.6;
 
                             &.primary-colored-button{
                                 &:after{
-                                    background-image: url(../Images/next-direction-primary-color-light-2-arrow.svg);
+                                    background-image: url(../Images/next-direction-primary-color-arrow.svg);
                                 }
                             }
 
                             span{
-                                color: var(--site-primary-light-2) !important;
+                                color: var(--site-primary) !important;
                             }
                         }
                         
@@ -275,8 +316,9 @@
 
                 &.disabled{
                     pointer-events: none;
-                    background-color: rgba($color: #ffffff, $alpha: 0.6);
-                    color: var(--site-primary-light-2);
+                    background-color: white;
+                    color: var(--site-primary);
+                    opacity: 0.6;
                 }
             }
         }
