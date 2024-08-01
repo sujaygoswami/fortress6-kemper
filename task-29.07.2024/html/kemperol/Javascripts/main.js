@@ -979,7 +979,14 @@ jQuery(document).ready(function() {
                 jQuery(this).parents('.choice-box-multi-item-holder').removeClass('multi-item-action-dasabled');
             }
         });
-    });    
+    });
+    
+    jQuery('.step-form-system-listing-module .the-listing').each(function(){
+        var INDEXCOUNT = jQuery(this).index();
+        jQuery(this).attr('data-count', INDEXCOUNT + 1);
+        var SERIALNUMBER = jQuery(this).attr('data-count');
+        jQuery(this).find('.system-number').html(SERIALNUMBER);
+    });
 
     
 
