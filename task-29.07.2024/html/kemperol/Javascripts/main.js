@@ -980,6 +980,42 @@ jQuery(document).ready(function() {
             }
         });
     });
+    jQuery('.iconic-box-choice-module .multi-choice-box-holder').each(function(){
+        var THISMAINMODULE = jQuery(this);
+        jQuery(this).find('.choice-selection-input').click(function(){
+            var CHEKEDITEMLENGTH = jQuery(THISMAINMODULE).find('.choice-selection-input:checked').length;
+            
+            if(CHEKEDITEMLENGTH >= 1){
+                jQuery(THISMAINMODULE).parents('.progress-box').find('.length-passed-checkbox').prop('checked', true);
+            }else{
+                jQuery(THISMAINMODULE).parents('.progress-box').find('.length-passed-checkbox').prop('checked', false);
+            }
+
+            var CHEKEDGROUPITEMLENGTH = jQuery(THISMAINMODULE).parents('.progress-relate-action').find('.length-passed-checkbox:checked').length;
+
+            // length 3 progress validation
+            if(CHEKEDGROUPITEMLENGTH == 1){
+                jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar span').width(33.33 + '%');
+                jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar .the-bar > div').removeClass('passed');
+                jQuery(this).parents('.progress-relate-parent.length-3').find('+ .form-step-action-module .form-step-ahead-module .page-button').addClass('this-disable-button');
+            }else if(CHEKEDGROUPITEMLENGTH == 2){
+                jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar span').width(66.66 + '%');
+                jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar .the-bar > div').removeClass('passed');
+                jQuery(this).parents('.progress-relate-parent.length-3').find('+ .form-step-action-module .form-step-ahead-module .page-button').addClass('this-disable-button');
+            }else if(CHEKEDGROUPITEMLENGTH == 3){
+                jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar span').width(100 + '%');
+                jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar .the-bar > div').addClass('passed');
+                jQuery(this).parents('.progress-relate-parent.length-3').find('+ .form-step-action-module .form-step-ahead-module .page-button').removeClass('this-disable-button');
+            }
+            else{
+                jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar span').width(0 + '%');
+                jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar .the-bar > div').removeClass('passed');
+                jQuery(this).parents('.progress-relate-parent.length-3').find('+ .form-step-action-module .form-step-ahead-module .page-button').addClass('this-disable-button');
+            }
+            
+            
+        });
+    });
     
     jQuery('.step-form-system-listing-module .the-listing').each(function(){
         var INDEXCOUNT = jQuery(this).index();
