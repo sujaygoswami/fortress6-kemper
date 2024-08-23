@@ -5,6 +5,7 @@
     --site-light-bg-beige: #f8f4ea;
     --this-ext-global-font-size: 16px;
     --this-ext-global-font-size-less: 15px;
+    --this-ext-global-font-size-medium: 22px;
     --site-success-color: #24ec64;
 }
 
@@ -109,6 +110,17 @@
                     &:last-child{
                         border-bottom: none;
                     }
+
+                    &.optional{
+                        .optional-group-cell{
+                            background-color: transparent;
+                            padding: 0 0 0 30px;
+
+                            @media screen and (max-width: 767px) {
+                                padding-left: 20px !important;
+                            }
+                        }
+                    }
                 }
                 td{
                     padding: 10px 12px;
@@ -116,6 +128,17 @@
                     color: var(--site-primary);
                     font-size: var(--this-ext-global-font-size-less);
                     font-family: "HelveticaNeue-light";
+
+                    @media screen and (max-width: 767px) {
+                        display: block;
+
+                        &:last-child{
+                            text-align: left !important;
+                        }
+                        &:first-child{
+                            padding-left: 12px !important;
+                        }
+                    }
                     
                     &:last-child{
                         text-align: right;
@@ -251,6 +274,7 @@
     .row-flex{
         display: flex;
         flex-wrap: wrap;
+        row-gap: 20px;
     }
 
     .this-site-bg-primary-light{
@@ -269,6 +293,9 @@
 
     .this-pad-box-default{
         padding: 50px;
+        @media screen and (max-width: 767px) {
+            padding: 20px;
+        }
     }
 
     .this-text-primary{
@@ -354,9 +381,32 @@
 
         &.custom-grid-mini-box{
             column-gap: 20px;
+
+            @media screen and (max-width: 1600px) {
+                column-gap: 0px;
+                margin-left: -10px;
+                margin-right: -10px;
+                .the-choice-box{
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    border-radius: 0px;
+                    
+
+                    & > .main-wrap{
+                        border-radius: 15px;
+                    }
+                }
+
+            }
             
             .the-choice-box{
                 width: 18.4%;
+                @media screen and (max-width: 1600px) {
+                    width: 33.33%;
+                }
+                @media screen and (max-width: 767px) {
+                    width: 100%;
+                }
             }
         }
 
@@ -473,6 +523,10 @@
         .the-title{
             font-size: var(--this-ext-global-font-size);
             font-family: "HelveticaNeue-bold";
+
+            @media screen and (max-width: 767px) {
+                font-size: 14px;
+            }
         }
 
         .the-choice-box{
@@ -524,7 +578,7 @@
 
     .form-step-action-module{
         .step-action-info-text{
-            font-size: var(--this-ext-global-font-size);
+            font-size: var(--this-ext-global-font-size-medium);
             font-family: "HelveticaNeue-light";
 
             strong{
@@ -534,32 +588,63 @@
         & > .main-wrap{
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
+            row-gap: 20px;
         }
     }
 
     .form-step-ahead-module{
         margin-left: auto;
+        @media screen and (max-width: 992px) {
+            margin-left: inherit;
+        }
+        @media screen and (max-width: 767px) {
+            width: 100%;
+            .page-button{
+                width: 100%;
+            }
+        }
         &.multi-item{
             display: flex;
             column-gap: 4px;
-            row-gap: 4px;
+            row-gap: 10px;
+
+            @media screen and (max-width: 767px) {
+               flex-wrap: wrap;
+
+               .step-form-iconin-input{
+                width: 100%;
+                & + .page-button{
+                    width: 100%;
+                }
+               }
+            }
         }
     }
 
     .step-pagination-module{
+        @media screen and (max-width: 992px) {
+            width: 100%;
+        }
         ul{
             list-style: none;
             margin: 0px;
             padding: 0px;
             display: flex;
             column-gap: 5px;
-            row-gap: 5px;
+            row-gap: 10px;
+            @media screen and (max-width: 767px) {
+                flex-wrap: wrap;
+            }
 
             li{
                 margin: 0px;
                 padding: 0px;
 
                 &.not-pagi{
+                    @media screen and (max-width: 767px) {
+                        width: 100%;
+                    }
                     &.disabled{
 
                         .page-button{
