@@ -996,20 +996,20 @@ jQuery(document).ready(function() {
             // length 3 progress validation
             if(CHEKEDGROUPITEMLENGTH == 1){
                 jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar span').width(33.33 + '%');
-                jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar .the-bar > div').removeClass('passed');
+                jQuery(this).parents('.progress-relate-parent.length-3').find('.selection-progress-bar-module').removeClass('passed');
                 jQuery(this).parents('.progress-relate-parent.length-3').find('+ .form-step-action-module .form-step-ahead-module .page-button').addClass('this-disable-button');
             }else if(CHEKEDGROUPITEMLENGTH == 2){
                 jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar span').width(66.66 + '%');
-                jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar .the-bar > div').removeClass('passed');
+                jQuery(this).parents('.progress-relate-parent.length-3').find('.selection-progress-bar-module').removeClass('passed');
                 jQuery(this).parents('.progress-relate-parent.length-3').find('+ .form-step-action-module .form-step-ahead-module .page-button').addClass('this-disable-button');
             }else if(CHEKEDGROUPITEMLENGTH == 3){
                 jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar span').width(100 + '%');
-                jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar .the-bar > div').addClass('passed');
+                jQuery(this).parents('.progress-relate-parent.length-3').find('.selection-progress-bar-module').addClass('passed');
                 jQuery(this).parents('.progress-relate-parent.length-3').find('+ .form-step-action-module .form-step-ahead-module .page-button').removeClass('this-disable-button');
             }
             else{
                 jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar span').width(0 + '%');
-                jQuery(this).parents('.progress-relate-parent.length-3').find('.the-selection-progress-bar .the-bar > div').removeClass('passed');
+                jQuery(this).parents('.progress-relate-parent.length-3').find('.selection-progress-bar-module').removeClass('passed');
                 jQuery(this).parents('.progress-relate-parent.length-3').find('+ .form-step-action-module .form-step-ahead-module .page-button').addClass('this-disable-button');
             }
             
