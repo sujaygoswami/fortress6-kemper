@@ -965,10 +965,10 @@ jQuery(document).ready(function() {
 
     // step form module July 2024
     jQuery('.default-custom-select-step-form select').selectmenu({
-        create: function() {
-            var UIwidth = jQuery(this).parent().width();
-            jQuery('div.ui-selectmenu-menu').addClass('custom-animated-nav default-custom-select-menu-step-form').width(UIwidth);
-        }
+        // create: function() {
+        //     var UIwidth = jQuery(this).parent().width();
+        //     jQuery('div.ui-selectmenu-menu').addClass('custom-animated-nav default-custom-select-menu-step-form').width(UIwidth);
+        // }
     });
 
     jQuery('.iconic-box-choice-module').each(function(){
